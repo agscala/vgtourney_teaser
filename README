@@ -1,0 +1,5 @@
+Portal to prompt for handle/email for VGT
+
+Initialize database with ./initialize.py
+
+Run server with ./server.py
