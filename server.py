@@ -2,37 +2,44 @@ from bottle import route, run, request, put, template, static_file, redirect
 import os
 import sqlite3
 
-conn = sqlite3.connect("portal.db")
+conn = sqlite3.connect("reservations.db")
 cursor = conn.cursor()
-
-def site_exists(url):
-	return True
 
 @route('/')
 def main():
-	cursor.execute("SELECT id, name, url from links")
-	links = list(cursor)
-	return template("media/index.tpl", links=links)
+	return template("media/welcome.tpl")
 
-@route('/link', method="POST")
-def link_submit():
-	url = request.forms.get('url')
-	name = request.forms.get('name')
+@route('/reserve', method="POST")
+def reservation_submit():
+	tag = request.forms.get('tag')
+	handle = request.forms.get('handle')
+	email = request.forms.get('email')
 
-	if site_exists(url):
-		cursor.execute("INSERT INTO links(name, url) VALUES (?, ?)", (name, url))
-		conn.commit()
+	cursor.execute("""
+		INSERT INTO reservations (tag, handle, email, timestamp)
+		VALUES (?, ?, ?, date('now'))
+	""", (tag, handle, email))
 
-	redirect("/")
+	conn.commit()
 
-@route('/link/:id/delete')
-def link_delete(id):
-	cursor.execute("DELETE FROM links WHERE id = ?", (id, ))
-	redirect("/")
+	return redirect("/" + handle)
+
+@route('/handles')
+def get_handles():
+	handle_query = request.query.handle
+	cursor.execute("SELECT handle FROM reservations WHERE handle = ?", (handle_query,))
+	handle = cursor.fetchone()
+	return handle if handle else "nope"
 
 @route('/media/:path#.+#')
 def server_static(path):
-	return static_file(path, root='/home/agscala/workspace/portal/media/')
+	return static_file(path, root=os.path.realpath(__file__)+'media/')
 
-run(host='localhost', port=8080)
+@route('/:handle')
+def congratulations(handle):
+	return template("media/congratulations.tpl", handle=handle, tag="AGE")
+
+
+print __file__
+run(host='localhost', port=8080, reloader=True)
 
