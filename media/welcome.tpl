@@ -8,17 +8,17 @@
 
 		<div>
 			<label for="input-handle">handle</label>
-			<input type="text" id="input-handle" name="handle" />
-			<p id="handle-error"></p>
+			<input type="text" id="input-handle" name="handle" value="{{ handle or '' }}" />
+			<p id="handle-error">{{ handle_error or "" }}</p>
 		</div>
 
 		<div>
 			<label for="input-email">email</label>
-			<input type="text" id="input-email" name="email" />
-			<p id="email-error"></p>
+			<input type="text" id="input-email" name="email" value="{{ email or '' }}" />
+			<p id="email-error">{{ email_error or "" }}</p>
 		</div>
 
-		<input type="submit" value="Reserve" />
+		<input type="submit" id="reservation-submit" value="Reserve" disabled />
 	</form>
 </div>
 

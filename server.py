@@ -7,7 +7,12 @@ cursor = conn.cursor()
 
 @route('/')
 def main():
-	return template("media/welcome.tpl")
+	return template("media/welcome.tpl",
+		handle="",
+		email="",
+		handle_error=None,
+		email_error=None
+	)
 
 @route('/reserve', method="POST")
 def reservation_submit():
@@ -15,31 +20,58 @@ def reservation_submit():
 	handle = request.forms.get('handle')
 	email = request.forms.get('email')
 
-	cursor.execute("""
-		INSERT INTO reservations (tag, handle, email, timestamp)
-		VALUES (?, ?, ?, date('now'))
-	""", (tag, handle, email))
+	is_new_handle = (get_handle(handle) == None)
+	is_valid_email = ("@" in email and "." in email)
 
-	conn.commit()
+	if handle and is_new_handle and email and is_valid_email:
+		cursor.execute("""
+			INSERT INTO reservations (tag, handle, email, timestamp)
+			VALUES (?, ?, ?, date('now'))
+		""", (tag, handle, email))
+		conn.commit()
 
-	return redirect("/" + handle)
+		return redirect("/" + handle)
+
+	else:
+		email_error = "Invalid Email" if not is_valid_email else ""
+		handle_error = "Duplicate Handle" if not is_new_handle else ""
+		return template("media/welcome.tpl",
+			handle=handle,
+			email=email,
+			email_error=email_error,
+			handle_error=handle_error
+		)
+
+
+def get_handle(handle_query):
+	print handle_query
+	cursor.execute("SELECT tag, handle FROM reservations WHERE handle LIKE ?", (handle_query,))
+	result = cursor.fetchone()
+	return result
 
 @route('/handles')
 def get_handles():
-	handle_query = request.query.handle
-	cursor.execute("SELECT handle FROM reservations WHERE handle = ?", (handle_query,))
-	handle = cursor.fetchone()
-	return handle if handle else "nope"
+	try:
+		tag, handle = get_handle(request.query.handle)
+		return handle if handle else ""
+	except TypeError, e:
+		return ""
 
 @route('/media/:path#.+#')
 def server_static(path):
-	return static_file(path, root=os.path.realpath(__file__)+'media/')
+	print os.getcwd()
+	return static_file(path, root=os.getcwd()+'/media')
 
 @route('/:handle')
 def congratulations(handle):
-	return template("media/congratulations.tpl", handle=handle, tag="AGE")
+	result = get_handle(handle)
+	if result:
+		tag, handle = result
+		return template("media/congratulations.tpl", tag=tag, handle=handle)
+	else:
+		return redirect("/")
 
 
 print __file__
-run(host='localhost', port=8080, reloader=True)
+run(host='localhost', port=8085, reloader=True)
 
