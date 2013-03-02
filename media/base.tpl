@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title></title>
+  <title>VGTourney {{ " | " + title }}</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -24,41 +24,13 @@
 
   <div id="container">
     <header>
-
     </header>
+
     <div id="main" role="main">
-
-		<div id="new-link">
-			<h2>Add a new link</h2>
-			<form action="/link" method="POST">
-				<label for="input-name">name:</label>
-				<input type="text" id="input-name" name="name" />
-
-				<label for="input-url">url:</label>
-				<input type="text" id="input-url" name="url" />
-
-				<input type="submit" value="Save" />
-			</form>
-		</div>
-
-		%for id, name, url in links:
-		<div class="link-wrapper">
-			<div>
-				<a class="link-name" href="{{ url }}">{{ name }}</a>
-			</div>
-			<div>
-				<a class="link-url" href="{{ url }}">{{ url }}</a>
-			</div>
-			<div>
-				<a class="link-delete" href="/link/{{ id }}/delete">delete</a>
-			</div>
-		</div>
-		%end
-
+		%include
     </div>
 
     <footer>
-
     </footer>
   </div> <!--! end of #container -->
 
