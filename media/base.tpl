@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="media/css/styles.css">
 	<link rel="stylesheet" href="media/css/viewport_style.css">
 	<link rel="stylesheet" href="media/css/1140.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="media/css/welcome.css">
 	<!-- end CSS-->
 
 	<script src="media/js/libs/modernizr-2.0.6.min.js"></script>
@@ -25,7 +26,7 @@
 
 <body>
 
-	<div class="container">
+	<div>
 		<header>
 		</header>
 
