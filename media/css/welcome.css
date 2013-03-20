@@ -37,6 +37,10 @@ select {
 	text-shadow: 1px 1px .2em #444;
 }
 
+h1 {
+	text-shadow: 0px 0px 5px white;
+}
+
 #signup-wrapper {
 	background-color: white;
 	padding: 20px;
@@ -49,6 +53,43 @@ select {
 #signup-header {
 	font-size: 32px;
 	margin-bottom: 20px
+}
+
+#input-tag,
+#input-handle {
+	font-size: 24px;
+	margin-bottom: 5px;
+}
+
+#input-tag {
+	width: 2.5em;
+	font-family: monospace;
+	background-color: red;
+	color: white;
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	margin-right: 5px;
+}
+
+#input-tag::-webkit-input-placeholder { /* WebKit browsers */
+	color: #FCA2A2;
+}
+#input-tag:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: white;
+}
+#input-tag::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: white;
+}
+#input-tag:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color: white;
+}
+
+#input-email {
+	margin-bottom: 5px;
+	font-size: 12px;
+	width: 80%;
 }
 
 #brackets-pane {

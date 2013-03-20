@@ -11,15 +11,26 @@
 		<div id="signup-wrapper" class="fivecol last">
 			<h2 id="signup-header">Reserve your handle:</h2>
 			<form action="/reserve" method="POST">
-				<div>
-					<input type="text" id="input-tag" name="tag" placeholder="tag" />
-					<input type="text" id="input-handle" name="handle" placeholder="handle" value="{{ handle or '' }}" />
-					<p id="handle-error">{{ handle_error or "" }}</p>
-				</div>
+				<table>
+					<tr>
+						<td>
+							<input type="text" id="input-tag" name="tag" maxlength="4" placeholder="TAG" />
+						</td>
+						<td>
+							<input type="text" id="input-handle" name="handle" placeholder="handle" value="{{ handle or '' }}" />
+							<p id="handle-error">{{ handle_error or "" }}</p>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input type="text" id="input-email" name="email" placeholder="email" value="{{ email or '' }}" />
+							<p id="email-error">{{ email_error or "" }}</p>
+						</td>
+					</tr>
+				</table>
 
 				<div>
-					<input type="text" id="input-email" name="email" placeholder="email" value="{{ email or '' }}" />
-					<p id="email-error">{{ email_error or "" }}</p>
 				</div>
 
 				<input type="submit" id="reservation-submit" value="Reserve" disabled />
@@ -30,13 +41,27 @@
 
 <div class="section">
 	<div class="row section-header">
-		<h1>The Next Generation Of Competitive Gaming.</h1>
+		<div class="sixcol">
+			<h1>ELO Ratings & Awards.</h1>
+		</div>
+		<div class="sixcol last">
+			<h1>A list of every match you played ever.</h1>
+		</div>
 	</div>
 </div>
 
 <div class="section" id="brackets-pane">
 	<div class="row section-header">
-		<h1>The Next Generation Of Competitive Gaming.</h1>
+		<h1>Anyone can run a tournament</h1>
+	</div>
+
+	<div class="row">
+		<div class="sixcol">
+			<h1>ELO Ratings</h1>
+		</div>
+		<div class="sixcol last">
+			<h1>A list of every match you played ever.</h1>
+		</div>
 	</div>
 </div>
 
