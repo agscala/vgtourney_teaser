@@ -16,7 +16,7 @@ $(document).ready(function() {
 		var input_handle = $(this).val();
 		$.get("/handles", {handle: $(this).val()}, function(result) {
 			if (input_handle === "") {
-				$("#handle-error").html("No handle entered");
+				$("#input-handle").css("No handle entered");
 				handle_valid = false;
 			}
 			else if (input_handle === result) {
@@ -32,17 +32,20 @@ $(document).ready(function() {
 	});
 
 	$("#input-email").keyup(function() {
-		var email_regex = /.+@.+\..+/;
 		var input_email = $("#input-email").val();
-		if (email_regex.test(input_email)) {
+		if (input_email.length > 0) {
 			$("#email-error").empty();
 			email_valid = true;
 		}
-		else {
-			$("#email-error").html("Invalid Email");
+		else if (email_valid == true) {
+			$("#email-error").html("Email is required");
 			email_valid = false;
 		}
 		check_submit();
+	});
+
+	$("#reservation-submit").click(function(elem) {
+		$(".card").addClass("flipped");
 	});
 
 });
