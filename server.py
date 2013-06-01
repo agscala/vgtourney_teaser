@@ -20,27 +20,14 @@ def reservation_submit():
 	handle = request.forms.get('handle')
 	email = request.forms.get('email')
 
-	is_new_handle = (get_handle(handle) == None)
-	is_valid_email = ("@" in email and "." in email)
+	print "[%s] %s - %s" % (tag, handle, email)
+	cursor.execute("""
+		INSERT INTO reservations (tag, handle, email, timestamp)
+		VALUES (?, ?, ?, date('now'))
+	""", (tag, handle, email))
+	conn.commit()
 
-	if handle and is_new_handle and email and is_valid_email:
-		cursor.execute("""
-			INSERT INTO reservations (tag, handle, email, timestamp)
-			VALUES (?, ?, ?, date('now'))
-		""", (tag, handle, email))
-		conn.commit()
-
-		return redirect("/" + handle)
-
-	else:
-		email_error = "Invalid Email" if not is_valid_email else ""
-		handle_error = "Duplicate Handle" if not is_new_handle else ""
-		return template("media/welcome.tpl",
-			handle=handle,
-			email=email,
-			email_error=email_error,
-			handle_error=handle_error
-		)
+	return "success"
 
 
 def get_handle(handle_query):

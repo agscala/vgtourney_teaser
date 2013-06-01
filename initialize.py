@@ -8,8 +8,8 @@ def create_tables():
 		CREATE TABLE reservations (
 			id INTEGER PRIMARY KEY AUTOINCREMENT,
 			tag TEXT DEFAULT "",
-			handle TEXT UNIQUE NOT NULL,
-			email TEXT UNIQUE NOT NULL,
+			handle TEXT,
+			email TEXT,
 			timestamp TEXT
 		) """)
 

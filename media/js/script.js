@@ -45,7 +45,25 @@ $(document).ready(function() {
 	});
 
 	$("#reservation-submit").click(function(elem) {
-		$(".card").addClass("flipped");
+		var input_tag = $("#input-tag").val();
+		var input_handle = $("#input-handle").val();
+		var input_email = $("#input-email").val();
+		var params = {
+			tag: input_tag,
+			handle: input_handle,
+			email: input_email
+		};
+
+		$.post("/reserve", params, function(result) {
+			$(".card").addClass("flipped");
+			if(input_tag.length == 0) {
+				$("#success-tag").hide();
+			}
+			else {
+				$("#success-tag").html(input_tag);
+			}
+			$("#success-handle").html(input_handle);
+		});
 	});
 
 });

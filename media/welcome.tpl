@@ -8,7 +8,7 @@
 				</p>
 
 				<p>
-					Soon we're bringing you a central place to establish your gaming identity.
+					Tournaments powered by VGTourney lets players build their gamer identity with stat tracking and match history while giving enhanced tools to organizers to streamline running leagues and events.
 				</p>
 
 				<div id="award-notice">
@@ -62,7 +62,7 @@
 							</p>
 							<p id="success-award">
 								<img src="/media/img/award.png" />
-								Get the alpha award when you sign up.
+								Expect an email soon to claim your alpha badge.
 							</p>
 						</div>
 					</div>
