@@ -42,7 +42,7 @@ select {
 
 }
 
-.section-header {
+#hero-sell .section-header {
 	font-size: 42px;
 	font-weight: bold;
 	color: black;
@@ -130,10 +130,22 @@ h1 {
 	width: 80%;
 }
 
+.section {
+	padding: 20px 0;
+}
+
+.section .section-header {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.section .section-body {
+	font-size: 18px;
+}
+
 #brackets-pane {
-	background: url('/media/img/wallpaper2.png') no-repeat center center fixed;
-	background-size: cover;
-	min-height: 600px;
+	background: url('/media/img/brackets.png') no-repeat center center;
+	min-height: 200px;
 	width: 100%;
 
 	border-top: 1px solid #888;
@@ -142,16 +154,23 @@ h1 {
 	box-shadow: inset 0px 0px 10px #444;
 }
 
-#pane-with-wallpaper3 {
-	background: url('/media/img/wallpaper3.jpg') no-repeat center center fixed;
-	background-size: cover;
-	min-height: 600px;
+#experience-pane {
+	background: url('/media/img/wallpaper3.jpg') no-repeat center center;
+	min-height: 200px;
 	width: 100%;
 
 	border-top: 1px solid #888;
 	border-bottom: 1px solid #888;
 
 	box-shadow: inset 0px 0px 10px #444;
+}
+
+#run-tournament-pain img {
+	height: 300px;
+}
+
+#experience-pane .last {
+	text-align: right;
 }
 
 #signup-wrapper {

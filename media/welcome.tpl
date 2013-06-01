@@ -1,5 +1,8 @@
 <div class="section" id="hero-banner-wrapper">
-	<img id="logo-top" src="/media/img/logo_light.png" />
+	<div class="row">
+		<img id="logo-top" src="/media/img/logo_light.png" />
+	</div>
+
 	<div id="hero-banner">
 		<div class="row">
 			<div id="hero-sell" class="sevencol">
@@ -73,18 +76,6 @@
 	</div>
 </div>
 
-<!--
-<div class="section">
-	<div class="row section-header">
-		<div class="sixcol">
-			<h1>ELO Ratings & Awards.</h1>
-		</div>
-		<div class="sixcol last">
-			<h1>A list of every match you played ever.</h1>
-		</div>
-	</div>
-</div>
-
 <div class="section" id="brackets-pane">
 	<div class="row section-header">
 		<h1>Anyone can run a tournament</h1>
@@ -92,32 +83,39 @@
 
 	<div class="row">
 		<div class="sixcol">
-			<h1>ELO Ratings</h1>
+			<p class="section-header">ELO Ratings</p>
+			<p class="section-body">Search for leagues in your area or create your own. Our tools make player and tournament management a breeze.</p>
 		</div>
 		<div class="sixcol last">
-			<h1>A list of every match you played ever.</h1>
 		</div>
 	</div>
 </div>
 
-<div class="section">
-	<div class="row section-header">
-		<h1>The Next Generation Of Competitive Gaming.</h1>
+<div class="section" id="experience-pane">
+	<div class="row">
+		<div class="sixcol">
+			<p class="section-header">ELO Ratings &amp; Awards.</p>
+			<p class="section-body">Search for leagues in your area or create your own. Our tools make player and tournament management a breeze.</p>
+		</div>
+		<div class="sixcol last">
+			<img src="/media/img/experience_breakdown.png" />
+		</div>
+		<div class="clear"></div>
 	</div>
 </div>
 
-<div class="section" id="pane-with-wallpaper3">
-	<div class="row section-header">
-		<h1>The Next Generation Of Competitive Gaming.</h1>
+<div class="section" id="run-tournament-pain">
+	<div class="row">
+		<div class="sixcol last">
+			<img src="/media/img/submit_match.png" />
+		</div>
+		<div class="sixcol">
+			<p class="section-header">ELO Ratings &amp; Awards.</p>
+			<p class="section-body">Search for leagues in your area or create your own. Our tools make player and tournament management a breeze.</p>
+		</div>
+		<div class="clear"></div>
 	</div>
 </div>
-
-<div class="section">
-	<div class="row section-header">
-		<h1>The Next Generation Of Competitive Gaming.</h1>
-	</div>
-</div>
--->
 
 %rebase media/base title="Reserve Your Handle"
 
