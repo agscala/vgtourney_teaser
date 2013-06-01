@@ -78,11 +78,12 @@
 
 <div class="section" id="brackets-pane">
 	<div class="row">
-		<div class="sixcol">
-			<p class="section-header">ELO Ratings</p>
-			<p class="section-body">Search for leagues in your area or create your own. Our tools make player and tournament management a breeze.</p>
+		<div class="sixcol", style="text-align:left;">
+			<img src="/media/img/brackets.png" />
 		</div>
 		<div class="sixcol last">
+			<p class="section-header">Comprehensive History</p>
+			<p class="section-body">Every match played, tournaments participated in, and leagues you're apart of, all in one place.</p>
 		</div>
 	</div>
 </div>
@@ -90,8 +91,8 @@
 <div class="section" id="experience-pane">
 	<div class="row">
 		<div class="sixcol">
-			<p class="section-header">ELO Ratings &amp; Awards.</p>
-			<p class="section-body">Search for leagues in your area or create your own. Our tools make player and tournament management a breeze.</p>
+			<p class="section-header">Stats &amp; Awards</p>
+			<p class="section-body">Earn experience for playing in tournaments. Earn even more for kicking ass</p>
 		</div>
 		<div class="sixcol last">
 			<img src="/media/img/experience_breakdown.png" />
@@ -100,13 +101,13 @@
 	</div>
 </div>
 
-<div class="section" id="run-tournament-pain">
+<div class="section" id="run-tournament-pane">
 	<div class="row">
-		<div class="sixcol last">
+		<div class="sixcol">
 			<img src="/media/img/submit_match.png" />
 		</div>
-		<div class="sixcol">
-			<p class="section-header">ELO Ratings &amp; Awards.</p>
+		<div class="sixcol last">
+			<p class="section-header">Looking for a Place to Play?</p>
 			<p class="section-body">Search for leagues in your area or create your own. Our tools make player and tournament management a breeze.</p>
 		</div>
 		<div class="clear"></div>
