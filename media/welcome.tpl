@@ -1,13 +1,20 @@
 <div class="section" id="hero-banner-wrapper">
 	<img id="logo-top" src="/media/img/logo_light.png" />
 	<div id="hero-banner">
-		<div class="row section-header">
-			<h1>The Next Generation Of Competitive Gaming.</h1>
-		</div>
-
 		<div class="row">
 			<div id="hero-sell" class="sevencol">
-				<h1>Sign up to VGTourney!</h1>
+				<p class="section-header">
+					The Next Generation Of Competitive Gaming.
+				</p>
+
+				<p>
+					Soon we're bringing you a central place to establish your gaming identity.
+				</p>
+
+				<div id="award-notice">
+					<img src="/media/img/award.png" />
+					Earn the alpha badge when you reserve your handle
+				</div>
 			</div>
 
 			<div class="flip fivecol last">
@@ -19,7 +26,7 @@
 								<table>
 									<tr>
 										<td>
-											<input type="text" id="input-tag" name="tag" maxlength="4" placeholder="TAG" />
+											<input type="text" id="input-tag" name="tag" maxlength="5" placeholder="TAG" />
 										</td>
 										<td>
 											<input type="text" id="input-handle" name="handle" placeholder="handle" value="{{ handle or '' }}" />
@@ -33,20 +40,31 @@
 											<p id="email-error">{{ email_error or "" }}</p>
 										</td>
 									</tr>
+									<tr>
+										<td></td>
+										<td>
+											<input type="button" id="reservation-submit" value="RESERVE" disabled />
+										</td>
+									</tr>
 								</table>
-
-								<div id="award-notice">
-									<img src="/media/img/award.png" />
-									earn the alpha badge →
-								</div>
-
-								<input type="button" id="reservation-submit" value="RESERVE" disabled />
 							</form>
 						</div>
 					</div>
 
 					<div class="face back">
-						BACK
+						<div id="form-success">
+							<div id="success-username">
+								<span id="success-tag">VGT</span>
+								<span id="success-handle">Scala</span>
+							</div>
+							<p>
+								Great.  We'll save that handle just for you.
+							</p>
+							<p id="success-award">
+								<img src="/media/img/award.png" />
+								Get the alpha award when you sign up.
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
