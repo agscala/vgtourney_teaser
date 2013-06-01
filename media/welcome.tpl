@@ -77,10 +77,6 @@
 </div>
 
 <div class="section" id="brackets-pane">
-	<div class="row section-header">
-		<h1>Anyone can run a tournament</h1>
-	</div>
-
 	<div class="row">
 		<div class="sixcol">
 			<p class="section-header">ELO Ratings</p>
