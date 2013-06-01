@@ -2,7 +2,7 @@ from bottle import route, run, request, put, template, static_file, redirect
 import os
 import sqlite3
 
-conn = sqlite3.connect("reservations.db")
+conn = sqlite3.connect("reservations.db", check_same_thread=False)
 cursor = conn.cursor()
 
 @route('/')
@@ -60,5 +60,5 @@ def congratulations(handle):
 
 
 print __file__
-run(host='localhost', port=9000, reloader=True)
+run(host='0.0.0.0', port=80, server="paste")
 
