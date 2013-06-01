@@ -23,7 +23,7 @@ def reservation_submit():
 	print "[%s] %s - %s" % (tag, handle, email)
 	cursor.execute("""
 		INSERT INTO reservations (tag, handle, email, timestamp)
-		VALUES (?, ?, ?, date('now'))
+		VALUES (?, ?, ?, datetime('now'))
 	""", (tag, handle, email))
 	conn.commit()
 
@@ -32,7 +32,7 @@ def reservation_submit():
 
 def get_handle(handle_query):
 	print handle_query
-	cursor.execute("SELECT tag, handle FROM reservations WHERE handle LIKE ?", (handle_query,))
+	cursor.execute("SELECT tag, handle FROM reservations WHERE handle = ? COLLATE NOCASE", (handle_query,))
 	result = cursor.fetchone()
 	return result
 

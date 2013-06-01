@@ -19,7 +19,7 @@ $(document).ready(function() {
 				$("#input-handle").css("No handle entered");
 				handle_valid = false;
 			}
-			else if (input_handle === result) {
+			else if (result) {
 				$("#handle-error").html("Handle already reserved");
 				handle_valid = false;
 			}
