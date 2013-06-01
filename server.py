@@ -1,6 +1,7 @@
 from bottle import route, run, request, put, template, static_file, redirect
 import os
 import sqlite3
+import sys
 
 conn = sqlite3.connect("reservations.db", check_same_thread=False)
 cursor = conn.cursor()
@@ -60,5 +61,13 @@ def congratulations(handle):
 
 
 print __file__
-run(host='0.0.0.0', port=80, server="paste")
+try:
+	mode = sys.argv[1]
+except IndexError:
+	mode = "production"
+
+if mode == "dev":
+	run(host='0.0.0.0', port=9000, reloader=True)
+else:
+	run(host='0.0.0.0', port=80, server="paste")
 
