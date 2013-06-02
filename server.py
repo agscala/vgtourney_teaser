@@ -1,7 +1,11 @@
 from bottle import route, run, request, put, template, static_file, redirect
+
 import os
 import sqlite3
 import sys
+
+import smtplib
+from email.mime.text import MIMEText as text
 
 conn = sqlite3.connect("reservations.db", check_same_thread=False)
 cursor = conn.cursor()
@@ -58,6 +62,27 @@ def congratulations(handle):
 		return template("media/congratulations.tpl", tag=tag, handle=handle)
 	else:
 		return redirect("/")
+
+@route('/feedback', method="POST")
+def send_feedback():
+	user = "noreply@vgtourney.com"
+	password = "VGTourney2000"
+
+	# receivers = ['justen@vgtourney.com', 'agscala@vgtourney.com']
+	receivers = ['Outc4sted@gmail.com']
+	topic = 'Feedback - ' + request.forms.get('topic')
+	message = request.forms.get('message')
+
+	content = text(message)
+	content['Subject'] = topic
+
+	smtpObj = smtplib.SMTP('smtp.gmail.com', 587)
+	smtpObj.starttls()
+	smtpObj.login(user, password)
+
+	smtpObj.sendmail(user, receivers, content.as_string())
+	smtpObj.quit()
+	return "OK"
 
 
 print __file__
