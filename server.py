@@ -68,7 +68,7 @@ def send_feedback():
 	user = "noreply@vgtourney.com"
 	password = "VGTourney2000"
 
-	receivers = ['justen@vgtourney.com', 'agscala@vgtourney.com']
+	receivers = ['justen@vgtourney.com', 'andrew@vgtourney.com']
 	topic = 'Feedback - ' + request.forms.get('topic')
 	email = request.forms.get('email') or "Anonymous"
 	message = request.forms.get('message') + "\n\nSent by " + email
