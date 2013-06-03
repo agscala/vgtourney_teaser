@@ -71,7 +71,8 @@ def send_feedback():
 	# receivers = ['justen@vgtourney.com', 'agscala@vgtourney.com']
 	receivers = ['Outc4sted@gmail.com']
 	topic = 'Feedback - ' + request.forms.get('topic')
-	message = request.forms.get('message')
+	email = request.forms.get('email') or "Anonymous"
+	message = request.forms.get('message') + "\n\nSent by " + email
 
 	content = text(message)
 	content['Subject'] = topic

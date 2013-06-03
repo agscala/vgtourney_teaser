@@ -92,10 +92,12 @@ $(document).ready(function() {
 	$("#feedback-submit").click(function() {
 		var topic = $("#feedback-topic").val();
 		var message = $("#feedback-message").val();
+		var email = $("#feedback-email").val();
 
 		var params = {
 			topic: topic,
-			message: message
+			message: message,
+			email: email
 		};
 
 		$.post("/feedback", params, function() {
