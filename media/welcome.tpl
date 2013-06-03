@@ -117,33 +117,36 @@
 <div class="section" id="contact-us-pane">
 	<div class="row">
 		<div class="sixcol">
-			<p class="section-header"> Have a feature idea, problem, or just want to give us kudos? Let us know!
+			<p class="section-header"> Contact us
+			<p class="section-body"> Have a feature idea, problem, or just want to give us kudos? Let us know!
 		</div>
-		<div class="sixcol last">
-			<div id="feedback-card" class="card">
-				<div class="face front">
-					<div>
-						<select id="feedback-topic">
-					  		<option value="" disabled selected>What do you have to say?</option>
-					  		<option value="Organizer feature suggestion">Feature idea for tournament organizers</option>
-					  		<option value="Player feature suggestion">Feature idea for players</option>
-					  		<option value="Problem with page">Problem with this page</option>
-					  		<option value="Kudos">Give us kudos</option>
-					  		<option value="Other">Something else?</option>
-						</select>
+		<div class="flip sixcol last">
+			<div id="feedback-card-wrapper">
+				<div id="feedback-card" class="card">
+					<div class="face front">
+						<div>
+							<select id="feedback-topic">
+								<option value="" disabled selected>What do you have to say?</option>
+								<option value="Organizer feature suggestion">Feature idea for tournament organizers</option>
+								<option value="Player feature suggestion">Feature idea for players</option>
+								<option value="Problem with page">Problem with this page</option>
+								<option value="Kudos">Give us kudos</option>
+								<option value="Other">Something else?</option>
+							</select>
+						</div>
+
+						<form id="feedback-form" action="/feedback" method="POST">
+							<div><input type="email" id="feedback-email" placeholder="Your email (optional)" /></div>
+							<div><textarea id="feedback-message">What's on your mind?</textarea></div>
+							<input type="button" id="feedback-submit" value="Submit" disabled />
+						</form>
 					</div>
 
-					<form id="feedback-form" action="/feedback" method="POST">
-						<div><input type="email" id="feedback-email" placeholder="Email (optional)" /></div>
-						<div><textarea id="feedback-message">What's on your mind?</textarea></div>
-						<input type="button" id="feedback-submit" value="Submit" disabled />
-					</form>
-				</div>
-
-				<div class="face back">
-					<p>
-						Thanks for letting us know!
-					</p>
+					<div class="face back">
+						<p id="feedback-thanks">
+							Thanks for letting us know!
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>

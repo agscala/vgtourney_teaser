@@ -82,7 +82,7 @@ def send_feedback():
 
 	smtpObj.sendmail(user, receivers, content.as_string())
 	smtpObj.quit()
-	return "OK"
+	return "success"
 
 
 print __file__

@@ -36,7 +36,6 @@ select {
 	background: -ms-linear-gradient(left,  #e73827 25%,#f96b18 68%); /* IE10+ */
 	background: linear-gradient(to right,  #e73827 25%,#f96b18 68%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e73827', endColorstr='#f96b18',GradientType=1 ); /* IE6-9 */
-
 }
 
 #hero-sell .section-header {
@@ -81,9 +80,10 @@ h1 {
 }
 
 #feedback-card {
-	width: 500px;
+	width: 300px;
 	height: 250px;
 	text-align: center;
+	padding: 5px;
 }
 
 #signup-header {
@@ -172,7 +172,7 @@ h1 {
 }
 
 #contact-us-pane textarea {
-	width: 100%;
+	width: 90%;
 	height: 100px;
 }
 
@@ -185,16 +185,23 @@ h1 {
 }
 
 #feedback-email {
-	width: 100%;
+	width: 90%;
 	margin-bottom: 5px;
 }
 
-#reservation-submit[disabled], #feedback-submit[disabled] {
+#feedback-thanks {
+	font-size: 1.9em;
+	margin-bottom: 40%;
+}
+
+#reservation-submit[disabled],
+#feedback-submit[disabled] {
 	box-shadow: none;
 	background: #FFB0B0;
 }
 
-#reservation-submit, #feedback-submit {
+#reservation-submit,
+#feedback-submit {
 	margin: 20px auto;
 	display: inline-block;
 	color: #ffffff;
@@ -224,14 +231,19 @@ h1 {
 }
 
 .flip {
-	-webkit-perspective: 800;
-	-moz-perspective:800;
+	-webkit-perspective: 800px;
+	-moz-perspective: 800px;  /* Firefox 10+ */
+  	-ms-perspective: 800px;  /* IE 10 */
+  	perspective: 800px;
 	width: 400px;
 }
 
 .flip .card.flipped {
 	-webkit-transform: rotatex(-180deg);
 	-moz-transform: rotatex(-180deg);
+	-ms-transform: rotatex(-180deg);  /* IE 9 */
+	-o-transform: rotatex(-180deg);  /* Opera 10.50-12.00 */
+	transform: rotatex(-180deg);  /* Firefox 16+, IE 10+, Opera 12.10+ */
 
 	box-shadow: 0px -2px 6px #444;
 }

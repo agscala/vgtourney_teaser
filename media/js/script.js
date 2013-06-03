@@ -47,7 +47,7 @@ $(document).ready(function() {
 		check_submit();
 	});
 
-	$("#reservation-submit").click(function(elem) {
+	$("#reservation-submit").click(function() {
 		var input_tag = $("#input-tag").val();
 		var input_handle = $("#input-handle").val();
 		var input_email = $("#input-email").val();
@@ -59,6 +59,7 @@ $(document).ready(function() {
 
 		$.post("/reserve", params, function(result) {
 			$("#signup-wrapper").addClass("flipped");
+
 			if(input_tag.length == 0) {
 				$("#success-tag").hide();
 			}
