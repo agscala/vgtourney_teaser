@@ -1,79 +1,350 @@
-<div class="section" id="hero-banner-wrapper">
+<div class="header-gradient">
 	<div class="row">
-		<img id="logo-top" src="/media/img/logo_light.png" />
+		<div class="large-6 columns">
+			<h1><img id="logo-top" src="/media/img/logo_light.png" /></h1>
+		</div>
 	</div>
 
-	<div id="hero-banner">
-		<div class="row">
-			<div id="hero-sell" class="sevencol">
-				<p class="section-header">
-					The Next Generation Of Competitive Gaming.
-				</p>
+	<div class="row header-section">
+		<div class="kk">
 
-				<p>
-					Tournaments powered by VGTourney lets players build their gamer identity with stat tracking and match history while giving enhanced tools to organizers to streamline running leagues and events.
-				</p>
+			<div class="large-6 columns">
+				<h3 id="top-section-header">A revolution in competitive gaming.</h3>
 
-				<div id="award-notice">
-					<img src="/media/img/award.png" />
-					Earn the alpha badge when you reserve your handle
+				<div id="hero-sell">
+					<p>
+						Tournaments powered by VGTourney lets players build their gamer identity with stat tracking and match history while giving enhanced tools to organizers to streamline running leagues and events.
+					</p>
+
+					<div id="award-notice">
+						<img src="/media/img/award.png" />
+						Earn the alpha badge when you reserve your handle
+					</div>
 				</div>
 			</div>
 
-			<div class="flip fivecol last">
+			<div class="flip large-6 columns">
 				<div id="signup-wrapper" class="card">
 					<div class="face front">
 						<div class="signup-inner">
-							<h2 id="signup-header">Reserve your handle on VGT</h2>
+							<div class="large-12 columns">
+								<h2 id="signup-header" class="raleway">Reserve your handle on VGT</h2>
+							</div>
+
 							<form action="/reserve" method="POST">
-								<table>
+								<div class="row collapse">
+									<div class="small-3 large-3 columns bigger-font">
+										<input type="text" id="input-tag" name="tag" maxlength="5" placeholder="TAG" />
+									</div>
+
+									<div class="small-7 large-8 columns">
+										<input type="text" id="input-handle" placeholder="handle" />
+										<small></small>
+									</div>
+
+									<div class="small-2 large-1 columns">
+										<span class="postfix"><i class="foundicon-asl"></i></span>
+									</div>
+								</div>
+
+
+								<div class="row collapse">
+									<div class="small-7 large-8 small-offset-3 large-offset-3 columns">
+										<input type="password" id="input-password" name="pword" minlength="6" placeholder="Password" />
+										<small></small>
+									</div>
+
+									<div class="small-2 large-1 columns">
+										<span class="postfix inline"><i class="foundicon-key"></i></span>
+									</div>
+
+								</div>
+
+								<div class="row collapse">
+									<div class="small-7 large-8 small-offset-3 large-offset-3 columns">
+										<input type="email" id="input-email" pattern="[^ @]*@[^ @]*" placeholder="email" />
+										<small></small>
+										<!-- <p id="email-error">{{ email_error or "" }}</p> -->
+									</div>
+
+									<div class="small-2 large-1 columns">
+										<span class="postfix inline"><i class="foundicon-network"></i></span>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="small-5 large-4 small-centered columns">
+										<input type="button" id="reservation-submit" value="RESERVE" disabled />
+									</div>
+								</div>
+
+
+<!-- 								<table>
 									<tr>
 										<td>
 											<input type="text" id="input-tag" name="tag" maxlength="5" placeholder="TAG" />
 										</td>
 										<td>
-											<input type="text" id="input-handle" name="handle" placeholder="handle" value="{{ handle or '' }}" />
-											<p id="handle-error">{{ handle_error or "" }}</p>
+											<div class="row collapse">
+												<div class="two mobile-one columns">
+													<span class="prefix"><i class="foundicon-asl"></i></span>
+												</div>
+												<div>
+													<input type="text" id="input-handle" name="handle" placeholder="handle" value="{{ handle or '' }}" />
+													<small class="error">Handle already reserved</small>
+												</div>
+											 <p id="handle-error">{{ handle_error or "" }}</p>
 										</td>
 									</tr>
 									<tr>
-										<td></td>
-										<td>
-											<input type="text" id="input-email" name="email" placeholder="email" value="{{ email or '' }}" />
+										<td colspan="2">
+											<input type="password" id="input-password" name="pword" minlength="6" placeholder="Password" />
+											<small class="error">Password too short</small>
+											
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											<input type="email" id="input-email" name="email" placeholder="email" value="{{ email or '' }}" />
 											<p id="email-error">{{ email_error or "" }}</p>
 										</td>
 									</tr>
 									<tr>
-										<td></td>
-										<td>
+										<td colspan="2">
 											<input type="button" id="reservation-submit" value="RESERVE" disabled />
 										</td>
 									</tr>
-								</table>
+								</table> -->
+
 							</form>
+
 						</div>
 					</div>
 
-					<div class="face back">
+		<!-- 			<div class="face back">
 						<div id="form-success">
 							<div id="success-username">
 								<span id="success-tag">VGT</span>
 								<span id="success-handle">Scala</span>
 							</div>
-							<p>
-								Great.  We'll save that handle just for you.
-							</p>
+
+							<p>Great.  We'll save that handle just for you.</p>
+
 							<p id="success-award">
 								<img src="/media/img/award.png" />
 								Expect an email soon to claim your alpha badge.
 							</p>
 						</div>
 					</div>
+		 -->
 				</div>
 			</div>
-			<div class="clear"> </div>
+
+			<div class="clear"></div>
+
+
 		</div>
 	</div>
+</div>
+
+<!-- Three-up Content Blocks -->
+
+<div class="row escher">
+	<div class="large-4 columns">
+		<img src="/media/img/brackets.png" />
+
+		<h4>Comprehensive History</h4>
+
+		<p>Every match played, tournaments participated in, and leagues you're apart of, all in one place.</p>
+	</div>
+
+	<div class="large-4 columns">
+		<img src="/media/img/experience_breakdown.png" />
+		<h4>Stats &amp; Awards</h4>
+
+		<p>Earn experience for playing in tournaments. Earn even more for kicking ass</p>
+	</div>
+
+	<div class="large-4 columns">
+		<img src="/media/img/submit_match.png" />
+		<h4>Looking for a Place to Play?</h4>
+
+		<p>Search for leagues in your area or create your own. Our tools make player and tournament management a breeze.</p>
+	</div>
+</div>
+
+<!-- Call to Action Panel -->
+<div class="row escher">
+	<div class="large-12 columns">
+		<div class="panel">
+			<h4>Get in touch!</h4>
+
+			<div class="row">
+				<div class="large-9 columns">
+					<p>Follow us on Twitter or contact us directly</p>
+					<a href="#" data-dropdown="drop1" class="button dropdown">Dropdown Button</a><br>
+
+					<ul id="drop1" class="f-dropdown">
+						<li><a href="#">This is a link</a></li>
+						<li><a href="#">This is another</a></li>
+						<li><a href="#">Yet another</a></li>
+					</ul>
+
+
+					<select id="feedback-topic" class="button dropdown">
+						<option value="" disabled selected>Contact us</option>
+						<option value="Organizer feature suggestion">Feature idea for tournament organizers</option>
+						<option value="Player feature suggestion">Feature idea for players</option>
+						<option value="Problem with page">Problem with this page</option>
+						<option value="Kudos">Give us kudos</option>
+						<option value="Other">Something else?</option>
+					</select>
+				</div>
+
+				<div class="flip large-3 columns">
+					<div id="feedback-card-wrapper">
+						<div id="feedback-card" class="card">
+							<div class="face front">
+								<div>
+									
+
+									
+										
+								</div>
+
+								<form id="feedback-form" action="/feedback" method="POST">
+									<div><input type="email" id="feedback-email" placeholder="Your email (optional)" /></div>
+									<div><textarea id="feedback-message">What's on your mind?</textarea></div>
+									<input type="button" id="feedback-submit" value="Submit" disabled />
+								</form>
+							</div>
+
+							<div class="face back">
+								<p id="feedback-thanks">
+									Thanks for letting us know!
+								</p>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+  <!-- Footer -->
+
+<footer class="row">
+	<div class="large-12 columns">
+		<hr />
+
+		<div class="row">
+			<div class="large-6 columns">
+				<p>&copy; Copyright no one at all. Go to town.</p>
+			</div>
+
+			<div class="large-6 columns">
+				<ul class="inline-list right">
+					<li><a href="#">Link 1</a></li>
+					<li><a href="#">Link 2</a></li>
+					<li><a href="#">Link 3</a></li>
+					<li><a href="#">Link 4</a></li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</footer>
+
+<!--
+<div class="container">
+	<div class="row">
+		<div id="hero-banner-wrapper">
+			<img id="logo-top" src="/media/img/logo_light.png" />
+		</div>
+	</div>
+
+	<div id="teaser-content" class="row">
+
+		<div id="hero-sell" class="sevencol">
+			<p class="section-header">
+				The Next Generation Of Competitive Gaming.
+			</p>
+
+			<p>
+				Tournaments powered by VGTourney lets players build their gamer identity with stat tracking and match history while giving enhanced tools to organizers to streamline running leagues and events.
+			</p>
+
+			<div id="award-notice">
+				<img src="/media/img/award.png" />
+				Earn the alpha badge when you reserve your handle
+			</div>
+		</div>
+
+		<div class="flip fivecol last">
+			<div id="signup-wrapper" class="card">
+
+				<div class="face front">
+					<div class="signup-inner">
+						<h2 id="signup-header">Reserve your handle on VGT</h2>
+						<form action="/reserve" method="POST">
+							<table>
+								<tr>
+									<td>
+										<input type="text" id="input-tag" name="tag" maxlength="5" placeholder="TAG" />
+									</td>
+									<td>
+										<input type="text" id="input-handle" name="handle" placeholder="handle" value="{{ handle or '' }}" />
+										<p id="handle-error">{{ handle_error or "" }}</p>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>
+										<input type="text" id="input-email" name="email" placeholder="email" value="{{ email or '' }}" />
+										<p id="email-error">{{ email_error or "" }}</p>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>
+										<input type="button" id="reservation-submit" value="RESERVE" disabled />
+									</td>
+								</tr>
+							</table>
+						</form>
+					</div>
+				</div>
+
+				<div class="face back">
+					<div id="form-success">
+						<div id="success-username">
+							<span id="success-tag">VGT</span>
+							<span id="success-handle">Scala</span>
+						</div>
+						<p>
+							Great.  We'll save that handle just for you.
+						</p>
+						<p id="success-award">
+							<img src="/media/img/award.png" />
+							Expect an email soon to claim your alpha badge.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="hero-banner">
+	<div class="row">
+
+		<div class="clear"> </div>
+	</div>
+
 </div>
 
 <div class="section" id="brackets-pane">
@@ -155,3 +426,4 @@
 %rebase media/base title="Reserve Your Handle"
 
 
+ -->

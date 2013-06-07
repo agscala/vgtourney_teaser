@@ -4,18 +4,22 @@ input[type="search"],
 input[type="email"],
 textarea,
 select {
-	background-color: #FCFCFC;
-    border: 1px solid #DDD;
-
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
     -webkit-box-shadow: 0 1px 1px #666 inset;
     -moz-box-shadow: 0 1px 1px #666 inset;
     box-shadow: 0 1px 1px #666 inset;
+}
 
-    padding: 5px;
-    font-size: 16px;
+#top-section-header {
+	font-family: 'Raleway', sans-serif;
+	text-shadow: 1px 1px .1em #888;
+	text-align: center;
+}
+
+.raleway {
+	font-family: 'Raleway', sans-serif;
 }
 
 .clear {
@@ -23,36 +27,43 @@ select {
 }
 
 #logo-top {
-	padding-bottom: 15px;
+	padding-bottom: 10px;
 }
 
-#hero-banner-wrapper {
-	padding: 15px 40px 40px;
-	background: #e73827; /* Old browsers */
-	background: -moz-linear-gradient(left,  #e73827 25%, #f96b18 68%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(25%,#e73827), color-stop(68%,#f96b18)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left,  #e73827 25%,#f96b18 68%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  #e73827 25%,#f96b18 68%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  #e73827 25%,#f96b18 68%); /* IE10+ */
-	background: linear-gradient(to right,  #e73827 25%,#f96b18 68%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e73827', endColorstr='#f96b18',GradientType=1 ); /* IE6-9 */
+#teaser-content {
+	background-color: #FFF
 }
 
-#hero-sell .section-header {
-	font-size: 42px;
-	font-weight: bold;
-	color: black;
+.header-gradient {
+	background-image: linear-gradient(bottom, rgb(230,0,0) 100%, rgb(255,89,0) 10%);
+	background-image: -o-linear-gradient(bottom, rgb(230,0,0) 100%, rgb(255,89,0) 10%);
+	background-image: -moz-linear-gradient(bottom, rgb(230,0,0) 100%, rgb(255,89,0) 10%);
+	background-image: -webkit-linear-gradient(bottom, rgb(230,0,0) 100%, rgb(255,89,0) 10%);
+	background-image: -ms-linear-gradient(bottom, rgb(230,0,0) 100%, rgb(255,89,0) 10%);
 
-	margin-bottom: 20px;
-	text-shadow: 1px 1px .1em #888;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(1, rgb(230,0,0)),
+		color-stop(0.1, rgb(255,89,0))
+	);
 }
 
-#hero-banner {
-	background-color: #DDD;
+.header-section {
+	height: 500px;
+}
+
+.kk {
 	background: url('/media/img/escheresque.png');
-	box-shadow: inset 0px 2px 6px #444;
-	/* width: 100%; */
-	padding: 40px;
+	padding: 20px 10px 10px;
+	height: 500px;
+}
+
+.escher {
+	background-color: #FFF;
+	background: url('/media/img/escheresque.png');
+	
 }
 
 #hero-sell {
@@ -93,16 +104,22 @@ h1 {
 
 #input-tag,
 #input-handle {
-	font-size: 32px;
-	margin-bottom: 15px;
 }
 
 #input-handle {
-	width: 80%;
+}
+
+#input-email {
+}
+
+.expand {
+	width: 100%;
+}
+
+.bigger-font input {
 }
 
 #input-tag {
-	width: 3.2em;
 	font-family: monospace;
 	background-color: red;
 	color: white;
@@ -110,7 +127,6 @@ h1 {
 	border-bottom-left-radius: 20px;
 	text-align: center;
 	text-transform: uppercase;
-	margin-right: 15px;
 }
 
 #input-tag::-webkit-input-placeholder { /* WebKit browsers */
@@ -124,12 +140,6 @@ h1 {
 }
 #input-tag:-ms-input-placeholder { /* Internet Explorer 10+ */
 	color: white;
-}
-
-#input-email {
-	margin-bottom: 5px;
-	font-size: 18px;
-	width: 80%;
 }
 
 .section:first-child {
@@ -200,7 +210,33 @@ h1 {
 	background: #FFB0B0;
 }
 
-#reservation-submit,
+#reservation-submit {
+	color: #ffffff;
+	font-size: 24px;
+	padding: 10px 20px;
+	background: -moz-linear-gradient(
+		top,
+		#ff2819 0%,
+		#ab0000);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#ff2819),
+		to(#ab0000));
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	border: 1px solid #7d0000;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,0.7);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,0.7);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,0.7);
+}
+
 #feedback-submit {
 	margin: 20px auto;
 	display: inline-block;
@@ -235,7 +271,7 @@ h1 {
 	-moz-perspective: 800px;  /* Firefox 10+ */
   	-ms-perspective: 800px;  /* IE 10 */
   	perspective: 800px;
-	width: 400px;
+	width: 490px;
 }
 
 .flip .card.flipped {

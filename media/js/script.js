@@ -1,13 +1,10 @@
 $(document).ready(function() {
 
-	var handle_valid = false;
-	var email_valid = false;
-
 	$("#feedback-form").hide();
 	$('#feedback-message').css("color", "#999");
 
-	var check_submit = function() {
-		if (handle_valid && email_valid) {
+	var toggle_submit = function(valid) {
+		if (valid) {
 			$("#reservation-submit").removeAttr("disabled");
 		}
 		else {
@@ -15,59 +12,155 @@ $(document).ready(function() {
 		}
 	};
 
-	$("#input-handle").keyup(function() {
-		var input_handle = $(this).val();
-		$.get("/handles", {handle: $(this).val()}, function(result) {
-			if (input_handle === "") {
-				$("#input-handle").css("No handle entered");
-				handle_valid = false;
-			}
-			else if (result) {
-				$("#handle-error").html("Handle already reserved");
-				handle_valid = false;
+	var validate_handle = function(submitting, callback) {
+		$this = $("#input-handle");
+		var input_handle = $this.val();
+		
+		if (input_handle === "") {
+			if (submitting) {
+				$this.next().html("Handle is required");
+				$this.parent().addClass("error");
+				callback(false);
 			}
 			else {
-				$("#handle-error").empty();
-				handle_valid = true;
+				callback(false);
 			}
-			check_submit();
+		}
+		else {
+			$.get("/handles", {handle: $this.val()}, function(result) {
+				if (result) {
+					$this.next().html("Handle already reserved");
+					$this.parent().addClass("error");
+					callback(false);
+				}
+				else {
+					$this.next().html("");
+					$this.parent().removeClass("error");
+					callback(true);
+				}
+			});
+		}
+	};
+
+	var validate_password = function(submitting) {
+		$this = $("#input-password");
+		var input_pword = $this.val();
+
+		if (input_pword.length > 0) {
+	    	if (input_pword.length >= 6) {
+				$this.next().html("");
+				$this.parent().removeClass("error");
+				return true;
+	    	}
+	    	else {
+				$this.next().html("Password must be at least 6 chars");
+				$this.parent().addClass("error");
+				return false;
+	    	}
+		}
+		else if (submitting) {
+			$this.next().html("Password is required");
+			$this.parent().addClass("error");
+			return false;
+		}
+	};
+
+	var validate_email = function(submitting) {
+		$this = $("#input-email");
+		var input_email = $this.val();
+
+		if (input_email.length > 0) {
+			var pattern = new RegExp("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}");
+
+	    	if (pattern.test(input_email)) {
+				$this.next().html("");
+				$this.parent().removeClass("error");
+				return true;
+	    	}
+	    	else {
+				$this.next().html("Invalid email");
+				$this.parent().addClass("error");
+				return false;
+	    	}
+		}
+		else if (submitting) {
+			$this.next().html("Email is required");
+			$this.parent().addClass("error");
+			return false;
+		}
+	};
+
+	var validated = function() {
+		validate_handle(true, function(valid_handle) {
+			valid_pword = validate_password(true);
+			valid_email = validate_email(true);
+
+			valid = valid_handle && valid_pword && valid_email;
+			toggle_submit(valid);
+			return valid;
 		});
+	};
+
+	$("#input-handle").keyup(function() {
+		validate_handle(false, function(valid_handle) {
+			valid = valid_handle && validate_password() && validate_email();
+			toggle_submit(valid);
+		});
+	});
+
+	$("#input-password").keyup(function() {
+		if (validate_password()) {
+			validate_handle(false, function(valid_handle){
+				valid = valid_handle && validate_email();
+				toggle_submit(valid);
+			});
+		}
+		else {
+			toggle_submit(false);
+		}
 	});
 
 	$("#input-email").keyup(function() {
-		var input_email = $("#input-email").val();
-		if (input_email.length > 0) {
-			$("#email-error").empty();
-			email_valid = true;
+		var pattern = new RegExp("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}");
+		var input_email = $(this).val();
+
+		if (pattern.test(input_email)) {
+			$(this).next().html("");
+			$(this).parent().removeClass("error");
+
+			validate_handle(false, function(valid_handle) {
+				valid = valid_handle && validate_password();
+				toggle_submit(valid);
+			});
 		}
-		else if (email_valid == true) {
-			$("#email-error").html("Email is required");
-			email_valid = false;
+		else {
+			toggle_submit(false);
 		}
-		check_submit();
 	});
 
 	$("#reservation-submit").click(function() {
-		var input_tag = $("#input-tag").val();
-		var input_handle = $("#input-handle").val();
-		var input_email = $("#input-email").val();
-		var params = {
-			tag: input_tag,
-			handle: input_handle,
-			email: input_email
-		};
+		if (validated()) {
+			var input_tag = $("#input-tag").val();
+			var input_handle = $("#input-handle").val();
+			var input_email = $("#input-email").val();
+			var params = {
+				tag: input_tag,
+				handle: input_handle,
+				email: input_email
+			};
 
-		$.post("/reserve", params, function(result) {
-			$("#signup-wrapper").addClass("flipped");
+			$.post("/reserve", params, function(result) {
+				$("#signup-wrapper").addClass("flipped");
 
-			if(input_tag.length == 0) {
-				$("#success-tag").hide();
-			}
-			else {
-				$("#success-tag").html(input_tag);
-			}
-			$("#success-handle").html(input_handle);
-		});
+				if(input_tag.length == 0) {
+					$("#success-tag").hide();
+				}
+				else {
+					$("#success-tag").html(input_tag);
+				}
+				$("#success-handle").html(input_handle);
+			});
+		}
 	});
 
 	$("#feedback-message").keyup(function () {
