@@ -27,7 +27,6 @@ select {
 }
 
 #logo-top {
-	padding-bottom: 10px;
 }
 
 #teaser-content {
@@ -35,19 +34,14 @@ select {
 }
 
 .header-gradient {
-	background-image: linear-gradient(bottom, rgb(230,0,0) 100%, rgb(255,89,0) 10%);
-	background-image: -o-linear-gradient(bottom, rgb(230,0,0) 100%, rgb(255,89,0) 10%);
-	background-image: -moz-linear-gradient(bottom, rgb(230,0,0) 100%, rgb(255,89,0) 10%);
-	background-image: -webkit-linear-gradient(bottom, rgb(230,0,0) 100%, rgb(255,89,0) 10%);
-	background-image: -ms-linear-gradient(bottom, rgb(230,0,0) 100%, rgb(255,89,0) 10%);
-
-	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(1, rgb(230,0,0)),
-		color-stop(0.1, rgb(255,89,0))
-	);
+	background: #ff3200; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #ff3200 0%, #bf0000 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ff3200), color-stop(100%,#bf0000)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #ff3200 0%,#bf0000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #ff3200 0%,#bf0000 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #ff3200 0%,#bf0000 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #ff3200 0%,#bf0000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3200', endColorstr='#bf0000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 .header-section {
@@ -102,8 +96,18 @@ h1 {
 	margin-bottom: 10px
 }
 
-#input-tag,
-#input-handle {
+.success {
+	display: block;
+	padding: 0.375em 0.25em;
+	margin-bottom: 1em;
+	font-size: 0.75em;
+	font-weight: bold;
+	background: #B99595;
+	color: #FFF;
+}
+
+#handle-status {
+	margin-top: -20px;
 }
 
 #input-handle {
@@ -122,13 +126,21 @@ h1 {
 
 #input-tag {
 	font-size: 20px;
-	font-family: monospace;
-	background-color: red;
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
 	color: white;
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 	text-align: center;
 	text-transform: uppercase;
+	background: #ff3200; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #ff3200 0%, #bf0000 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ff3200), color-stop(100%,#bf0000)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #ff3200 0%,#bf0000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #ff3200 0%,#bf0000 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #ff3200 0%,#bf0000 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #ff3200 0%,#bf0000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3200', endColorstr='#bf0000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 #input-tag::-webkit-input-placeholder { /* WebKit browsers */
@@ -227,14 +239,15 @@ h1 {
 	font-family: 'Raleway', sans-serif;
 	font-weight: bold;
 	padding: 10px 20px;
-	background: -moz-linear-gradient(
-		top,
-		#ff2819 0%,
-		#ab0000);
-	background: -webkit-gradient(
-		linear, left top, left bottom,
-		from(#ff2819),
-		to(#ab0000));
+	background: #ff3200; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #ff3200 0%, #bf0000 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ff3200), color-stop(100%,#bf0000)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #ff3200 0%,#bf0000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #ff3200 0%,#bf0000 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #ff3200 0%,#bf0000 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #ff3200 0%,#bf0000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3200', endColorstr='#bf0000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
@@ -319,7 +332,7 @@ h1 {
 }
 
 .signup-inner {
-	padding: 20px;
+	padding: 20px 20px 1px;
 	background-color: white;
 }
 

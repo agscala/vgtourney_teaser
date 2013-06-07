@@ -3,26 +3,29 @@ $(document).ready(function() {
 	$("#feedback-form").hide();
 	$('#feedback-message').css("color", "#999");
 
-	var toggle_submit = function(valid) {
-		if (valid) {
-			$("#reservation-submit").removeAttr("disabled");
-		}
-		else {
-			$("#reservation-submit").attr("disabled", "disabled");
-		}
-	};
-
 	var validate_handle = function(submitting, callback) {
+		submitting = submitting || false;
+		callback = callback || function(){};
+
 		$this = $("#input-handle");
 		var input_handle = $this.val();
+
+		if ($this.next().hasClass("success")) {
+			$this.next().removeClass("success");
+			$this.next().html("");
+		}
 		
 		if (input_handle === "") {
 			if (submitting) {
-				$this.next().html("Handle is required");
+				$this.next().html("<i class='icon-exclamation-sign'></i> Handle is required");
 				$this.parent().addClass("error");
 				callback(false);
 			}
 			else {
+				if ($this.next().html() !== "Handle is required") {
+					$this.next().html("");
+					$this.parent().removeClass("error");
+				}
 				callback(false);
 			}
 		}
@@ -30,22 +33,23 @@ $(document).ready(function() {
 			$.get("/handles", {handle: $this.val()}, function(result) {
 				var check_result = function() {
 					if (result) {
-						$this.next().html("Handle already reserved");
+						$this.next().html("<i class='icon-exclamation-sign'></i> Handle already reserved");
 						$this.parent().addClass("error");
 
 						if ($("#handle-icon").hasClass("foundicon-asl") == false)
 							$("#handle-icon").removeClass();
-							$("#handle-icon").addClass("foundicon-asl");
+							$("#handle-icon").addClass("foundicon-asl icon-large");
 
 						callback(false);
 					}
 					else {
-						$this.next().html("");
 						$this.parent().removeClass("error");
+						$this.next().addClass("success");
+						$this.next().html("<i class='icon-thumbs-up'></i> " + $this.val() + " is available!");
 
 						if ($("#handle-icon").hasClass("foundicon-asl") == false)
 							$("#handle-icon").removeClass();
-							$("#handle-icon").addClass("foundicon-asl");
+							$("#handle-icon").addClass("foundicon-asl icon-large");
 
 						callback(true);
 					}
@@ -67,13 +71,13 @@ $(document).ready(function() {
 				return true;
 	    	}
 	    	else {
-				$this.next().html("Password must be at least 6 chars");
+				$this.next().html("<i class='icon-exclamation-sign'></i> Password must be at least 6 chars");
 				$this.parent().addClass("error");
 				return false;
 	    	}
 		}
 		else if (submitting) {
-			$this.next().html("Password is required");
+			$this.next().html("<i class='icon-exclamation-sign'></i> Password is required");
 			$this.parent().addClass("error");
 			return false;
 		}
@@ -92,13 +96,13 @@ $(document).ready(function() {
 				return true;
 	    	}
 	    	else {
-				$this.next().html("Invalid email");
+				$this.next().html("<i class='icon-exclamation-sign'></i> Invalid email");
 				$this.parent().addClass("error");
 				return false;
 	    	}
 		}
 		else if (submitting) {
-			$this.next().html("Email is required");
+			$this.next().html("<i class='icon-exclamation-sign'></i> Email is required");
 			$this.parent().addClass("error");
 			return false;
 		}
@@ -110,32 +114,19 @@ $(document).ready(function() {
 			valid_email = validate_email(true);
 
 			valid = valid_handle && valid_pword && valid_email;
-			toggle_submit(valid);
 			return valid;
 		});
 	};
 
 	$("#input-handle").bindWithDelay("keyup", function() {
-		$("#handle-icon").removeClass();
-		$("#handle-icon").addClass("icon-spinner icon-spin");
-
-		validate_handle(false, function(valid_handle) {
-			valid = valid_handle && validate_password() && validate_email();
-			toggle_submit(valid);
-		});
+		if ($("#input-handle").val() !== "") {
+			$("#handle-icon").removeClass();
+			$("#handle-icon").addClass("icon-spinner icon-spin icon-large");
+		}
+		validate_handle();
 	}, 300);
 
-	$("#input-password").bindWithDelay("keyup", function() {
-		if (validate_password()) {
-			validate_handle(false, function(valid_handle){
-				valid = valid_handle && validate_email();
-				toggle_submit(valid);
-			});
-		}
-		else {
-			toggle_submit(false);
-		}
-	}, 500);
+	$("#input-password").bindWithDelay("keyup", function() {validate_password(false)}, 500);
 
 	$("#input-email").keyup(function() {
 		var pattern = new RegExp("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}");
@@ -144,14 +135,6 @@ $(document).ready(function() {
 		if (pattern.test(input_email)) {
 			$(this).next().html("");
 			$(this).parent().removeClass("error");
-
-			validate_handle(false, function(valid_handle) {
-				valid = valid_handle && validate_password();
-				toggle_submit(valid);
-			});
-		}
-		else {
-			toggle_submit(false);
 		}
 	});
 

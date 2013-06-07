@@ -27,10 +27,6 @@
 				<div class="card">
 					<div class="face front">
 						<div class="signup-inner">
-							<!-- <div class="large-12 columns">
-								<h2 id="signup-header" class="raleway">Reserve your handle on VGT</h2>
-							</div> -->
-
 							<form action="/reserve" method="POST">
 								<div class="row collapse">
 									<div class="small-3 columns">
@@ -39,7 +35,7 @@
 
 									<div class="small-7 large-8 columns">
 										<input type="text" id="input-handle" placeholder="handle" />
-										<small></small>
+										<small id="handle-status"></small>
 									</div>
 
 									<div class="small-2 large-1 columns">
@@ -49,7 +45,7 @@
 
 
 								<div class="row collapse">
-									<div class="small-7 large-8 small-offset-3 columns">
+									<div class="small-10 large-11 columns">
 										<input type="password" id="input-password" minlength="6" placeholder="password" />
 										<small></small>
 									</div>
@@ -61,7 +57,7 @@
 								</div>
 
 								<div class="row collapse">
-									<div class="small-7 large-8 small-offset-3 columns">
+									<div class="small-10 large-11 columns">
 										<input type="email" id="input-email" pattern="[^ @]*@[^ @]*" placeholder="email" />
 										<small></small>
 									</div>
@@ -73,7 +69,7 @@
 
 								<div class="row">
 									<div class="small-7 small-offset-3 columns">
-										<input type="button" id="reservation-submit" value="Reserve your handle" disabled />
+										<input type="button" id="reservation-submit" value="Reserve your handle!" />
 									</div>
 								</div>
 
