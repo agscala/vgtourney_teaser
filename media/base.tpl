@@ -21,6 +21,7 @@
 	<link rel="stylesheet" href="media/css/welcome.css">
 	<link rel="stylesheet" href="media/css/accessibility_foundicons.css">
 	<link rel="stylesheet" href="media/css/accessibility_foundicons_ie7.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 	<!-- end CSS-->
 
 	<script src="media/js/libs/vendor/custom.modernizr.js"></script>
@@ -46,6 +47,7 @@
 
 	<!-- scripts concatenated and minified via ant build script-->
 	<script defer src="media/js/plugins.js"></script>
+	<script defer src="media/js/bindWithDelay.plugin.js"></script>
 	<script defer src="media/js/script.js"></script>
 	<!-- end scripts-->
 

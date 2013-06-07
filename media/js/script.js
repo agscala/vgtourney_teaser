@@ -28,16 +28,30 @@ $(document).ready(function() {
 		}
 		else {
 			$.get("/handles", {handle: $this.val()}, function(result) {
-				if (result) {
-					$this.next().html("Handle already reserved");
-					$this.parent().addClass("error");
-					callback(false);
-				}
-				else {
-					$this.next().html("");
-					$this.parent().removeClass("error");
-					callback(true);
-				}
+				var check_result = function() {
+					if (result) {
+						$this.next().html("Handle already reserved");
+						$this.parent().addClass("error");
+
+						if ($("#handle-icon").hasClass("foundicon-asl") == false)
+							$("#handle-icon").removeClass();
+							$("#handle-icon").addClass("foundicon-asl");
+
+						callback(false);
+					}
+					else {
+						$this.next().html("");
+						$this.parent().removeClass("error");
+
+						if ($("#handle-icon").hasClass("foundicon-asl") == false)
+							$("#handle-icon").removeClass();
+							$("#handle-icon").addClass("foundicon-asl");
+
+						callback(true);
+					}
+				};
+
+				window.setTimeout(check_result, 300);
 			});
 		}
 	};
@@ -101,14 +115,17 @@ $(document).ready(function() {
 		});
 	};
 
-	$("#input-handle").keyup(function() {
+	$("#input-handle").bindWithDelay("keyup", function() {
+		$("#handle-icon").removeClass();
+		$("#handle-icon").addClass("icon-spinner icon-spin");
+
 		validate_handle(false, function(valid_handle) {
 			valid = valid_handle && validate_password() && validate_email();
 			toggle_submit(valid);
 		});
-	});
+	}, 300);
 
-	$("#input-password").keyup(function() {
+	$("#input-password").bindWithDelay("keyup", function() {
 		if (validate_password()) {
 			validate_handle(false, function(valid_handle){
 				valid = valid_handle && validate_email();
@@ -118,7 +135,7 @@ $(document).ready(function() {
 		else {
 			toggle_submit(false);
 		}
-	});
+	}, 500);
 
 	$("#input-email").keyup(function() {
 		var pattern = new RegExp("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}");

@@ -24,17 +24,17 @@
 			</div>
 
 			<div class="flip large-6 columns">
-				<div id="signup-wrapper" class="card">
+				<div class="card">
 					<div class="face front">
 						<div class="signup-inner">
-							<div class="large-12 columns">
+							<!-- <div class="large-12 columns">
 								<h2 id="signup-header" class="raleway">Reserve your handle on VGT</h2>
-							</div>
+							</div> -->
 
 							<form action="/reserve" method="POST">
 								<div class="row collapse">
-									<div class="small-3 large-3 columns bigger-font">
-										<input type="text" id="input-tag" name="tag" maxlength="5" placeholder="TAG" />
+									<div class="small-3 columns">
+										<input type="text" id="input-tag" maxlength="5" placeholder="TAG" />
 									</div>
 
 									<div class="small-7 large-8 columns">
@@ -43,78 +43,39 @@
 									</div>
 
 									<div class="small-2 large-1 columns">
-										<span class="postfix"><i class="foundicon-asl"></i></span>
+										<span id="handle-icon-container" class="postfix inline"><i id="handle-icon" class="foundicon-asl icon-large"></i></span>
 									</div>
 								</div>
 
 
 								<div class="row collapse">
-									<div class="small-7 large-8 small-offset-3 large-offset-3 columns">
-										<input type="password" id="input-password" name="pword" minlength="6" placeholder="Password" />
+									<div class="small-7 large-8 small-offset-3 columns">
+										<input type="password" id="input-password" minlength="6" placeholder="password" />
 										<small></small>
 									</div>
 
 									<div class="small-2 large-1 columns">
-										<span class="postfix inline"><i class="foundicon-key"></i></span>
+										<span class="postfix inline"><i class="foundicon-key icon-large"></i></span>
 									</div>
 
 								</div>
 
 								<div class="row collapse">
-									<div class="small-7 large-8 small-offset-3 large-offset-3 columns">
+									<div class="small-7 large-8 small-offset-3 columns">
 										<input type="email" id="input-email" pattern="[^ @]*@[^ @]*" placeholder="email" />
 										<small></small>
-										<!-- <p id="email-error">{{ email_error or "" }}</p> -->
 									</div>
 
 									<div class="small-2 large-1 columns">
-										<span class="postfix inline"><i class="foundicon-network"></i></span>
+										<span class="postfix inline"><i class="icon-envelope-alt"></i></span>
 									</div>
 								</div>
 
 								<div class="row">
-									<div class="small-5 large-4 small-centered columns">
-										<input type="button" id="reservation-submit" value="RESERVE" disabled />
+									<div class="small-7 small-offset-3 columns">
+										<input type="button" id="reservation-submit" value="Reserve your handle" disabled />
 									</div>
 								</div>
-
-
-<!-- 								<table>
-									<tr>
-										<td>
-											<input type="text" id="input-tag" name="tag" maxlength="5" placeholder="TAG" />
-										</td>
-										<td>
-											<div class="row collapse">
-												<div class="two mobile-one columns">
-													<span class="prefix"><i class="foundicon-asl"></i></span>
-												</div>
-												<div>
-													<input type="text" id="input-handle" name="handle" placeholder="handle" value="{{ handle or '' }}" />
-													<small class="error">Handle already reserved</small>
-												</div>
-											 <p id="handle-error">{{ handle_error or "" }}</p>
-										</td>
-									</tr>
-									<tr>
-										<td colspan="2">
-											<input type="password" id="input-password" name="pword" minlength="6" placeholder="Password" />
-											<small class="error">Password too short</small>
-											
-										</td>
-									</tr>
-									<tr>
-										<td colspan="2">
-											<input type="email" id="input-email" name="email" placeholder="email" value="{{ email or '' }}" />
-											<p id="email-error">{{ email_error or "" }}</p>
-										</td>
-									</tr>
-									<tr>
-										<td colspan="2">
-											<input type="button" id="reservation-submit" value="RESERVE" disabled />
-										</td>
-									</tr>
-								</table> -->
 
 							</form>
 

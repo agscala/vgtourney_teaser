@@ -107,6 +107,7 @@ h1 {
 }
 
 #input-handle {
+	font-size: 20px;
 }
 
 #input-email {
@@ -120,6 +121,7 @@ h1 {
 }
 
 #input-tag {
+	font-size: 20px;
 	font-family: monospace;
 	background-color: red;
 	color: white;
@@ -210,9 +212,20 @@ h1 {
 	background: #FFB0B0;
 }
 
+#handle-icon-container {
+	height: 3.3em;
+}
+#handle-icon-container i {
+	position: absolute;
+	margin-top: 10px;
+	margin-left: -9px;
+}
+
 #reservation-submit {
 	color: #ffffff;
-	font-size: 24px;
+	margin-left: -6px;
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
 	padding: 10px 20px;
 	background: -moz-linear-gradient(
 		top,
