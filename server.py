@@ -41,11 +41,24 @@ def get_handle(handle_query):
 	result = cursor.fetchone()
 	return result
 
+def get_email(email_query):
+	cursor.execute("SELECT email FROM reservations WHERE email = ? COLLATE NOCASE", (email_query,))
+	result = cursor.fetchone()
+	return result
+
 @route('/handles')
 def get_handles():
 	try:
 		tag, handle = get_handle(request.query.handle)
 		return handle if handle else ""
+	except TypeError, e:
+		return ""
+
+@route('/emails')
+def get_emails():
+	try:
+		email = get_email(request.query.email)
+		return email if email else ""
 	except TypeError, e:
 		return ""
 

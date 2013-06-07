@@ -83,7 +83,9 @@ $(document).ready(function() {
 		}
 	};
 
-	var validate_email = function(submitting) {
+	var validate_email = function(callback) {
+		callback = callback || function(){};
+
 		$this = $("#input-email");
 		var input_email = $this.val();
 
@@ -91,30 +93,39 @@ $(document).ready(function() {
 			var pattern = new RegExp("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}");
 
 	    	if (pattern.test(input_email)) {
-				$this.next().html("");
-				$this.parent().removeClass("error");
-				return true;
+				$.get("/emails", {email: input_email}, function(result) {
+					if (result) {
+						$this.next().html("<i class='icon-exclamation-sign'></i> This email is already registered");
+						$this.parent().addClass("error");
+						callback(false);
+					}
+					else {
+						$this.next().html("");
+						$this.parent().removeClass("error");
+						callback(true);
+					}
+				});
 	    	}
 	    	else {
 				$this.next().html("<i class='icon-exclamation-sign'></i> Invalid email");
 				$this.parent().addClass("error");
-				return false;
+				callback(false);
 	    	}
 		}
 		else if (submitting) {
 			$this.next().html("<i class='icon-exclamation-sign'></i> Email is required");
 			$this.parent().addClass("error");
-			return false;
+			callback(false);
 		}
 	};
 
-	var validated = function() {
+	var validated = function(callback) {
 		validate_handle(true, function(valid_handle) {
-			valid_pword = validate_password(true);
-			valid_email = validate_email(true);
-
-			valid = valid_handle && valid_pword && valid_email;
-			return valid;
+			validate_email(function(valid_email) {
+				valid_pword = validate_password(true);
+				valid = valid_handle && valid_pword && valid_email;
+				callback(valid);
+			});
 		});
 	};
 
@@ -139,7 +150,7 @@ $(document).ready(function() {
 	});
 
 	$("#reservation-submit").click(function() {
-		if (validated()) {
+		validated(function(valid) {
 			var input_tag = $("#input-tag").val();
 			var input_handle = $("#input-handle").val();
 			var input_email = $("#input-email").val();
@@ -160,7 +171,7 @@ $(document).ready(function() {
 				}
 				$("#success-handle").html(input_handle);
 			});
-		}
+		});
 	});
 
 	$("#feedback-message").keyup(function () {
