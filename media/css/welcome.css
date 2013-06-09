@@ -79,7 +79,7 @@ h1 {
 
 #feedback-card {
 	width: 300px;
-	height: 250px;
+	height: 200px;
 	text-align: center;
 	padding: 5px;
 }
@@ -224,7 +224,8 @@ h1 {
 	margin-left: -9px;
 }
 
-#reservation-submit {
+#reservation-submit,
+#feedback-submit {
 	color: #fff;
 	margin-left: -6px;
 	font-family: 'Alef', sans-serif;
@@ -239,35 +240,6 @@ h1 {
 	background: radial-gradient(ellipse at center,  #dd0408 0%,#b20000 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dd0408', endColorstr='#b20000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 2px;
-	border-radius: 2px;
-	border: 1px solid #7d0000;
-	-moz-box-shadow:
-		0px 1px 3px rgba(000,000,000,0.5),
-		inset 0px 0px 2px rgba(255,255,255,0.7);
-	-webkit-box-shadow:
-		0px 1px 3px rgba(000,000,000,0.5),
-		inset 0px 0px 2px rgba(255,255,255,0.7);
-	box-shadow:
-		0px 1px 3px rgba(000,000,000,0.5),
-		inset 0px 0px 2px rgba(255,255,255,0.7);
-}
-
-#feedback-submit {
-	margin: 20px auto;
-	display: inline-block;
-	color: #ffffff;
-	font-size: 24px;
-	padding: 10px 20px;
-	background: -moz-linear-gradient(
-		top,
-		#ff2819 0%,
-		#ab0000);
-	background: -webkit-gradient(
-		linear, left top, left bottom,
-		from(#ff2819),
-		to(#ab0000));
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
@@ -333,11 +305,14 @@ h1 {
 	border-radius: 3px;
 	border: 3px solid #7d0000;
 	background-color: #FFF;
+}
+
+.signup-inner,
+.signup-back {
 	background: url('/media/img/grey.png');
 }
 
 .flip .card .back {
-	background: url('/media/img/grey.png');
 	height: 300px;
 	top: 20px
 	padding: 20px;
@@ -403,4 +378,60 @@ h1 {
 	font-weight: bold;
 }
 
+.social-media {
+	display: table;
+}
+
+#facebook-button,
+#twitter-button {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 48px;
+	font-weight: bold;
+	padding: 10px;
+	width: 300px;
+	color: white;
+	height: 200px;
+}
+
+#facebook-button i,
+#twitter-button i {
+	margin-right: 10px;
+}
+
+#facebook-button .social-button-subtext,
+#twitter-button .social-button-subtext {
+	font-size: 24px;
+	margin-bottom: 20px;
+	font-style: italic;
+	font-weight: normal;
+}
+
+#twitter-button {
+	background-color: #00ACEE;
+}
+
+#facebook-button {
+	background-color: #3B5998;
+}
+
+#contact-us-wrapper {
+	padding: 20px 0;
+	background-color: #FFF;
+}
+
+.feedback-front,
+.feedback-back {
+	background-color: white;
+}
+
+#feedback-card-wrapper {
+	height: 200px;
+}
+
+#feedback-card .front,
+#feedback-card .back {
+	height: 150px;
+}
 

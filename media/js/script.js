@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-	$("#feedback-form").hide();
 	$('#feedback-message').css("color", "#999");
 
 	var validate_handle = function(submitting, callback) {
