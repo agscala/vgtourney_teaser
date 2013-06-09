@@ -119,8 +119,8 @@
 
 	<div class="large-4 columns info">
 		<h3>Stats &amp; Awards</h3>
-		<img style="width: 300px; height: 300px; border:1px solid black;"></img>
-		<!-- <img src="/media/img/experience_breakdown.png" /> -->
+		<!-- <img style="width: 300px; height: 300px; border:1px solid black;"></img> -->
+		<img src="/media/img/prizepackage.png" />
 
 		<p>Earn experience for playing in tournaments. Earn even more for kicking ass</p>
 	</div>
