@@ -82,8 +82,8 @@
 						<div class="face back">
 							<div id="form-success">
 								<div id="success-username">
-									<span id="success-tag">VGT</span>
-									<span id="success-handle">Scala</span>
+									<span id="success-tag">VG</span>
+									<span id="success-handle">Tourney</span>
 								</div>
 
 								<p>Great.  We'll save that handle just for you.</p>
