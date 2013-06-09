@@ -1,6 +1,6 @@
 <div class="header-gradient">
 	<div class="row">
-		<div class="small-4 small-centered columns">
+		<div class="small-4 columns">
 			<img id="logo-top" src="/media/img/logo_light.png" />
 		</div>
 	</div>
@@ -72,7 +72,7 @@
 
 								</form>
 
-								<div id="award-notice">
+								<div class="award-notice">
 									<img src="/media/img/award.png" />
 									Earn the alpha badge when you reserve your handle
 								</div>
@@ -88,10 +88,10 @@
 
 								<p>Great.  We'll save that handle just for you.</p>
 
-								<p id="success-award">
+								<div class="award-notice">
 									<img src="/media/img/award.png" />
-									Expect an email soon to claim your alpha badge.
-								</p>
+									<span>Expect an email soon to claim your alpha badge.</span>
+								</div>
 							</div>
 						</div>
 
@@ -109,24 +109,25 @@
 <!-- Three-up Content Blocks -->
 
 <div class="row">
-	<div class="large-4 columns">
+	<div class="large-4 columns info">
+		<h3>Comprehensive History</h3>
 		<img src="/media/img/brackets.png" />
 
-		<h4>Comprehensive History</h4>
 
 		<p>Every match played, tournaments participated in, and leagues you're apart of, all in one place.</p>
 	</div>
 
-	<div class="large-4 columns">
-		<img src="/media/img/experience_breakdown.png" />
-		<h4>Stats &amp; Awards</h4>
+	<div class="large-4 columns info">
+		<h3>Stats &amp; Awards</h3>
+		<img style="width: 300px; height: 300px; border:1px solid black;"></img>
+		<!-- <img src="/media/img/experience_breakdown.png" /> -->
 
 		<p>Earn experience for playing in tournaments. Earn even more for kicking ass</p>
 	</div>
 
-	<div class="large-4 columns">
-		<img src="/media/img/submit_match.png" />
-		<h4>Looking for a Place to Play?</h4>
+	<div class="large-4 columns info">
+		<h3>Need a Place to Play?</h3>
+		<img src="/media/img/setupcard.png" />
 
 		<p>Search for leagues in your area or create your own. Our tools make player and tournament management a breeze.</p>
 	</div>
@@ -150,7 +151,7 @@
 					</ul>
 
 
-					<select id="feedback-topic" class="button dropdown">
+					<select id="feedback-topic" class="customDropdown">
 						<option value="" disabled selected>Contact us</option>
 						<option value="Organizer feature suggestion">Feature idea for tournament organizers</option>
 						<option value="Player feature suggestion">Feature idea for players</option>

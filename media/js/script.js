@@ -44,8 +44,15 @@ $(document).ready(function() {
 					}
 					else {
 						$this.parent().removeClass("error");
-						$this.next().addClass("success");
-						$this.next().html("<i class='icon-thumbs-up'></i> " + $this.val() + " is available!");
+
+						if (submitting) {
+							$this.next().removeClass();
+							$this.next().html("");
+						}
+						else {
+							$this.next().addClass("success");
+							$this.next().html("<i class='icon-thumbs-up'></i> " + $this.val() + " is available!");
+						}
 
 						if ($("#handle-icon").hasClass("foundicon-asl") == false)
 							$("#handle-icon").removeClass();
@@ -84,8 +91,6 @@ $(document).ready(function() {
 	};
 
 	var validate_email = function(callback) {
-		callback = callback || function(){};
-
 		$this = $("#input-email");
 		var input_email = $this.val();
 
@@ -121,6 +126,11 @@ $(document).ready(function() {
 
 	var validated = function(callback) {
 		validate_handle(true, function(valid_handle) {
+			if ($("#handle-status").hasClass("success")) {
+				$("#handle-status").html("");
+				$("#handle-status").removeClass();
+			}
+
 			validate_email(function(valid_email) {
 				valid_pword = validate_password(true);
 				valid = valid_handle && valid_pword && valid_email;
@@ -150,33 +160,30 @@ $(document).ready(function() {
 	});
 
 	$("#reservation-submit").click(function() {
-		$("#signup-wrapper").addClass("flipped");
+		validated(function(valid) {
+			if (valid) {
+				var input_tag = $("#input-tag").val();
+				var input_handle = $("#input-handle").val();
+				var input_email = $("#input-email").val();
+				var params = {
+					tag: input_tag,
+					handle: input_handle,
+					email: input_email
+				};
 
-		setTimeout(function(){$("#signup-wrapper").removeClass("flipped");}, 1000);
-		// validated(function(valid) {
-		// 	if (valid) {
-		// 		var input_tag = $("#input-tag").val();
-		// 		var input_handle = $("#input-handle").val();
-		// 		var input_email = $("#input-email").val();
-		// 		var params = {
-		// 			tag: input_tag,
-		// 			handle: input_handle,
-		// 			email: input_email
-		// 		};
+				$.post("/reserve", params, function(result) {
+					$("#signup-wrapper").addClass("flipped");
 
-		// 		$.post("/reserve", params, function(result) {
-		// 			$("#signup-wrapper").addClass("flipped");
-
-		// 			if(input_tag.length == 0) {
-		// 				$("#success-tag").hide();
-		// 			}
-		// 			else {
-		// 				$("#success-tag").html(input_tag);
-		// 			}
-		// 			$("#success-handle").html(input_handle);
-		// 		});
-		// 	}
-		// });
+					if(input_tag.length == 0) {
+						$("#success-tag").html("VGT");
+					}
+					else {
+						$("#success-tag").html(input_tag);
+					}
+					$("#success-handle").html(input_handle);
+				});
+			}
+		});
 	});
 
 	$("#feedback-message").keyup(function () {

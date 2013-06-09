@@ -25,6 +25,7 @@ body {
 	font-weight: bold;
 	margin-bottom: 50px;
 	color: #FDD;
+	white-space: nowrap;
 }
 
 .clear {
@@ -59,9 +60,10 @@ body {
 	font-size: 18px;
 	color: #FEE;
 	line-height: 1.5em;
+	padding: 0px 10px 30px 10px;
 }
 
-#award-notice {
+.award-notice {
 	font-size: 15px;
 	background: white;
 	border-top: 2px dotted maroon;
@@ -124,15 +126,15 @@ h1 {
 	border-bottom-left-radius: 20px;
 	text-align: center;
 	text-transform: uppercase;
-	background: #dd0408; /* Old browsers */
-	background: -moz-radial-gradient(center, ellipse cover,  #dd0408 0%, #7c0002 100%); /* FF3.6+ */
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#dd0408), color-stop(100%,#7c0002)); /* Chrome,Safari4+ */
-	background: -webkit-radial-gradient(center, ellipse cover,  #dd0408 0%,#7c0002 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-radial-gradient(center, ellipse cover,  #dd0408 0%,#7c0002 100%); /* Opera 12+ */
-	background: -ms-radial-gradient(center, ellipse cover,  #dd0408 0%,#7c0002 100%); /* IE10+ */
-	background: radial-gradient(ellipse at center,  #dd0408 0%,#7c0002 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dd0408', endColorstr='#7c0002',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
+	background: #dd0408; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #dd0408 0%, #b20000 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#dd0408), color-stop(100%,#b20000)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #dd0408 0%,#b20000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #dd0408 0%,#b20000 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #dd0408 0%,#b20000 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #dd0408 0%,#b20000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dd0408', endColorstr='#b20000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 #input-tag::-webkit-input-placeholder { /* WebKit browsers */
@@ -223,20 +225,19 @@ h1 {
 }
 
 #reservation-submit {
-	color: #ffffff;
+	color: #fff;
 	margin-left: -6px;
 	font-family: 'Alef', sans-serif;
 	font-weight: bold;
 	padding: 10px 20px;
 	background: #dd0408; /* Old browsers */
-	background: -moz-radial-gradient(center, ellipse cover,  #dd0408 0%, #7c0002 100%); /* FF3.6+ */
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#dd0408), color-stop(100%,#7c0002)); /* Chrome,Safari4+ */
-	background: -webkit-radial-gradient(center, ellipse cover,  #dd0408 0%,#7c0002 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-radial-gradient(center, ellipse cover,  #dd0408 0%,#7c0002 100%); /* Opera 12+ */
-	background: -ms-radial-gradient(center, ellipse cover,  #dd0408 0%,#7c0002 100%); /* IE10+ */
-	background: radial-gradient(ellipse at center,  #dd0408 0%,#7c0002 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dd0408', endColorstr='#7c0002',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
+	background: -moz-radial-gradient(center, ellipse cover,  #dd0408 0%, #b20000 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#dd0408), color-stop(100%,#b20000)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #dd0408 0%,#b20000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #dd0408 0%,#b20000 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #dd0408 0%,#b20000 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #dd0408 0%,#b20000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dd0408', endColorstr='#b20000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
@@ -322,12 +323,9 @@ h1 {
 	height: 300px;
 	position: absolute;
 	z-index: 1;
-
-	box-shadow: 0px 2px 6px #444;
 }
 
 .signup-inner {
-	height: 100%;
 	padding: 20px 20px 1px;
 	background-color: white;
 	-moz-border-radius: 3px;
@@ -352,6 +350,19 @@ h1 {
 	transform: rotatex(-180deg);  /* Firefox 16+, IE 10+, Opera 12.10+ */
 }
 
+.info img {
+	border: 1px solid black;
+	background-color: #FFF;
+}
+.info h3 {
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+}
+.info p {
+	margin-top: 20px;
+	font-family: 'Alef', sans-serif;
+}
+
 #form-success {
 	padding: 20px 20px 1px;
 	height: 100%;
@@ -363,27 +374,29 @@ h1 {
 	background: url('/media/img/grey.png');
 }
 
-#form-success img {
-	width: 28px;
-}
-
-#success-award {
-	margin-top: 10px;
-	font-size: 16px;
-}
-
 #success-username {
 	border-bottom: 1px solid #BBB;
 	padding-bottom: 15px;
-	margin-bottom: 10px;
+	margin-bottom: 30px;
 }
 
 #success-tag {
-	background-color: red;
+	font-family: 'Alef', sans-serif;
 	color: white;
+	text-transform: uppercase;
+	
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 	padding: 5px 10px;
+
+	background: #dd0408; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #dd0408 0%, #b20000 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#dd0408), color-stop(100%,#b20000)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #dd0408 0%,#b20000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #dd0408 0%,#b20000 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #dd0408 0%,#b20000 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #dd0408 0%,#b20000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dd0408', endColorstr='#b20000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 #success-handle {
