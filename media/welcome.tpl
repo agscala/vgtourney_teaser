@@ -1,25 +1,20 @@
 <div class="header-gradient">
 	<div class="row">
-		<div class="large-6 columns">
-			<h1><img id="logo-top" src="/media/img/logo_light.png" /></h1>
+		<div class="small-4 small-centered columns">
+			<img id="logo-top" src="/media/img/logo_light.png" />
 		</div>
 	</div>
 
 	<div class="row header-section">
-		<div class="kk">
+		<div>
 
 			<div class="large-6 columns">
-				<h3 id="top-section-header">A revolution in competitive gaming.</h3>
+				<div>
+					<div id="top-section-header">A revolution in competitive gaming.</div>
+				</div>
 
 				<div id="hero-sell">
-					<p>
-						Tournaments powered by VGTourney lets players build their gamer identity with stat tracking and match history while giving enhanced tools to organizers to streamline running leagues and events.
-					</p>
-
-					<div id="award-notice">
-						<img src="/media/img/award.png" />
-						Earn the alpha badge when you reserve your handle
-					</div>
+					Tournaments powered by VGTourney lets players build their gamer identity with stat tracking and match history while giving enhanced tools to organizers to streamline running leagues and events.
 				</div>
 			</div>
 
@@ -75,7 +70,13 @@
 
 							</form>
 
+							<div id="award-notice">
+								<img src="/media/img/award.png" />
+								Earn the alpha badge when you reserve your handle
+							</div>
 						</div>
+						
+
 					</div>
 
 		<!-- 			<div class="face back">
@@ -94,6 +95,7 @@
 						</div>
 					</div>
 		 -->
+
 				</div>
 			</div>
 

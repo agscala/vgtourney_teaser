@@ -112,7 +112,7 @@ $(document).ready(function() {
 				callback(false);
 	    	}
 		}
-		else if (submitting) {
+		else {
 			$this.next().html("<i class='icon-exclamation-sign'></i> Email is required");
 			$this.parent().addClass("error");
 			callback(false);
@@ -135,9 +135,9 @@ $(document).ready(function() {
 			$("#handle-icon").addClass("icon-spinner icon-spin icon-large");
 		}
 		validate_handle();
-	}, 300);
+	}, 600);
 
-	$("#input-password").bindWithDelay("keyup", function() {validate_password(false)}, 500);
+	$("#input-password").bindWithDelay("keyup", function() {validate_password(false)}, 600);
 
 	$("#input-email").keyup(function() {
 		var pattern = new RegExp("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}");
@@ -151,26 +151,28 @@ $(document).ready(function() {
 
 	$("#reservation-submit").click(function() {
 		validated(function(valid) {
-			var input_tag = $("#input-tag").val();
-			var input_handle = $("#input-handle").val();
-			var input_email = $("#input-email").val();
-			var params = {
-				tag: input_tag,
-				handle: input_handle,
-				email: input_email
-			};
+			if (valid) {
+				var input_tag = $("#input-tag").val();
+				var input_handle = $("#input-handle").val();
+				var input_email = $("#input-email").val();
+				var params = {
+					tag: input_tag,
+					handle: input_handle,
+					email: input_email
+				};
 
-			$.post("/reserve", params, function(result) {
-				$("#signup-wrapper").addClass("flipped");
+				$.post("/reserve", params, function(result) {
+					$("#signup-wrapper").addClass("flipped");
 
-				if(input_tag.length == 0) {
-					$("#success-tag").hide();
-				}
-				else {
-					$("#success-tag").html(input_tag);
-				}
-				$("#success-handle").html(input_handle);
-			});
+					if(input_tag.length == 0) {
+						$("#success-tag").hide();
+					}
+					else {
+						$("#success-tag").html(input_tag);
+					}
+					$("#success-handle").html(input_handle);
+				});
+			}
 		});
 	});
 
