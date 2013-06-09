@@ -37,19 +37,6 @@
 										</div>
 									</div>
 
-
-									<div class="row collapse">
-										<div class="small-10 large-11 columns">
-											<input type="password" id="input-password" minlength="6" placeholder="password" />
-											<small></small>
-										</div>
-
-										<div class="small-2 large-1 columns">
-											<span class="postfix inline"><i class="foundicon-key icon-large"></i></span>
-										</div>
-
-									</div>
-
 									<div class="row collapse">
 										<div class="small-10 large-11 columns">
 											<input type="email" id="input-email" pattern="[^ @]*@[^ @]*" placeholder="email" />

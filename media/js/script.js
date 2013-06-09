@@ -66,29 +66,6 @@ $(document).ready(function() {
 		}
 	};
 
-	var validate_password = function(submitting) {
-		$this = $("#input-password");
-		var input_pword = $this.val();
-
-		if (input_pword.length > 0) {
-	    	if (input_pword.length >= 6) {
-				$this.next().html("");
-				$this.parent().removeClass("error");
-				return true;
-	    	}
-	    	else {
-				$this.next().html("<i class='icon-exclamation-sign'></i> Password must be at least 6 chars");
-				$this.parent().addClass("error");
-				return false;
-	    	}
-		}
-		else if (submitting) {
-			$this.next().html("<i class='icon-exclamation-sign'></i> Password is required");
-			$this.parent().addClass("error");
-			return false;
-		}
-	};
-
 	var validate_email = function(callback) {
 		$this = $("#input-email");
 		var input_email = $this.val();
@@ -126,8 +103,7 @@ $(document).ready(function() {
 	var validated = function(callback) {
 		validate_handle(true, function(valid_handle) {
 			validate_email(function(valid_email) {
-				valid_pword = validate_password(true);
-				valid = valid_handle && valid_pword && valid_email;
+				valid = valid_handle && valid_email;
 				callback(valid);
 			});
 		});
@@ -140,8 +116,6 @@ $(document).ready(function() {
 		}
 		validate_handle();
 	}, 600);
-
-	$("#input-password").bindWithDelay("keyup", function() {validate_password(false)}, 600);
 
 	$("#input-email").keyup(function() {
 		var pattern = new RegExp("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}");
