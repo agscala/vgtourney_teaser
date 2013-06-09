@@ -126,11 +126,6 @@ $(document).ready(function() {
 
 	var validated = function(callback) {
 		validate_handle(true, function(valid_handle) {
-			if ($("#handle-status").hasClass("success")) {
-				$("#handle-status").html("");
-				$("#handle-status").removeClass();
-			}
-
 			validate_email(function(valid_email) {
 				valid_pword = validate_password(true);
 				valid = valid_handle && valid_pword && valid_email;
