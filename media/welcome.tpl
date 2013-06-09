@@ -189,16 +189,13 @@
 
 		<div class="row">
 			<div class="large-6 columns">
-				<p>&copy; Copyright no one at all. Go to town.</p>
+				<p>&copy; 2013 VGTourney</p>
 			</div>
 
-			<div class="large-6 columns">
-				<ul class="inline-list right">
-					<li><a href="#">Link 1</a></li>
-					<li><a href="#">Link 2</a></li>
-					<li><a href="#">Link 3</a></li>
-					<li><a href="#">Link 4</a></li>
-				</ul>
+			<div id="footer-love" class="large-6 columns">
+				Made with
+				<i class="icon-heart"></i>
+				in Detroit
 			</div>
 		</div>
 
