@@ -12,6 +12,11 @@ select {
     box-shadow: 0 1px 1px #666 inset;
 }
 
+body {
+	background-color: #FFF;
+	background: url('/media/img/shattered.png');
+}
+
 #top-section-header {
 	font-family: 'Raleway', sans-serif;
 	text-shadow: 0px 2px 3px #555;
@@ -20,14 +25,6 @@ select {
 	font-weight: bold;
 	margin-bottom: 50px;
 	color: #FDD;
-}
-
-.raleway {
-	font-family: 'Raleway', sans-serif;
-}
-
-.alef {
-	font-family: 'Alef', sans-serif;
 }
 
 .clear {
@@ -51,23 +48,10 @@ select {
 	background: -ms-radial-gradient(center, ellipse cover,  #dd0408 0%,#7c0002 100%); /* IE10+ */
 	background: radial-gradient(ellipse at center,  #dd0408 0%,#7c0002 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dd0408', endColorstr='#7c0002',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
 }
 
 .header-section {
 	height: 380px;
-}
-
-.kk {
-	background: url('/media/img/escheresque.png');
-	padding: 20px 10px 10px;
-	height: 500px;
-}
-
-.escher {
-	background-color: #FFF;
-	background: url('/media/img/escheresque.png');
-	
 }
 
 #hero-sell {
@@ -83,17 +67,12 @@ select {
 	border-top: 2px dotted maroon;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	background-color: #FEE;
+	background-color: #FFF;
+	background: url('/media/img/grey.png');
 }
 
 h1 {
 	text-shadow: 0px 0px 5px white;
-}
-
-#signup-wrapper {
-	height: 250px;
-	border-radius: 3px;
-	background-color: #FAFAFA;
 }
 
 #feedback-card {
@@ -304,10 +283,10 @@ h1 {
 }
 
 .flip {
-	-webkit-perspective: 800px;
-	-moz-perspective: 800px;  /* Firefox 10+ */
-  	-ms-perspective: 800px;  /* IE 10 */
-  	perspective: 800px;
+	-webkit-perspective: 800;
+	-moz-perspective: 800;  /* Firefox 10+ */
+	-ms-perspective: 800;  /* IE 10 */
+	perspective: 800;
 	width: 490px;
 }
 
@@ -322,6 +301,7 @@ h1 {
 }
 
 .flip .card {
+	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
 	-webkit-transition: 0.5s;
 	-moz-transform-style: preserve-3d;
@@ -349,7 +329,8 @@ h1 {
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	border: 3px solid #7d0000;
-	background-color: #FEE;
+	background-color: #FFF;
+	background: url('/media/img/grey.png');
 }
 
 .flip .card .back {
@@ -365,9 +346,17 @@ h1 {
 }
 
 #form-success {
-	padding: 30px;
+	padding: 20px 20px 1px;
 	text-align: center;
 	font-size: 32px;
+
+	background-color: white;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 3px solid #7d0000;
+	background-color: #FFF;
+	background: url('/media/img/grey.png');
 }
 
 #form-success img {

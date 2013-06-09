@@ -18,84 +18,84 @@
 				</div>
 			</div>
 
-			<div class="flip large-6 columns">
-				<div class="card">
-					<div class="face front">
-						<div class="signup-inner">
-							<form action="/reserve" method="POST">
-								<div class="row collapse">
-									<div class="small-3 columns">
-										<input type="text" id="input-tag" maxlength="5" placeholder="TAG" />
+			<div class="large-6 columns">
+				<div class="flip">
+					<div id="signup-wrapper" class="card">
+
+						<div class="face front">
+							<div class="signup-inner">
+								<form action="/reserve" method="POST">
+									<div class="row collapse">
+										<div class="small-3 columns">
+											<input type="text" id="input-tag" maxlength="5" placeholder="TAG" />
+										</div>
+
+										<div class="small-7 large-8 columns">
+											<input type="text" id="input-handle" placeholder="handle" />
+											<small id="handle-status"></small>
+										</div>
+
+										<div class="small-2 large-1 columns">
+											<span id="handle-icon-container" class="postfix inline"><i id="handle-icon" class="foundicon-asl icon-large"></i></span>
+										</div>
 									</div>
 
-									<div class="small-7 large-8 columns">
-										<input type="text" id="input-handle" placeholder="handle" />
-										<small id="handle-status"></small>
+
+									<div class="row collapse">
+										<div class="small-10 large-11 columns">
+											<input type="password" id="input-password" minlength="6" placeholder="password" />
+											<small></small>
+										</div>
+
+										<div class="small-2 large-1 columns">
+											<span class="postfix inline"><i class="foundicon-key icon-large"></i></span>
+										</div>
+
 									</div>
 
-									<div class="small-2 large-1 columns">
-										<span id="handle-icon-container" class="postfix inline"><i id="handle-icon" class="foundicon-asl icon-large"></i></span>
+									<div class="row collapse">
+										<div class="small-10 large-11 columns">
+											<input type="email" id="input-email" pattern="[^ @]*@[^ @]*" placeholder="email" />
+											<small></small>
+										</div>
+
+										<div class="small-2 large-1 columns">
+											<span class="postfix inline"><i class="icon-envelope-alt"></i></span>
+										</div>
 									</div>
+
+									<div class="row">
+										<div class="small-7 small-offset-3 columns">
+											<input type="button" id="reservation-submit" value="Reserve your handle!" />
+										</div>
+									</div>
+
+								</form>
+
+								<div id="award-notice">
+									<img src="/media/img/award.png" />
+									Earn the alpha badge when you reserve your handle
 								</div>
-
-
-								<div class="row collapse">
-									<div class="small-10 large-11 columns">
-										<input type="password" id="input-password" minlength="6" placeholder="password" />
-										<small></small>
-									</div>
-
-									<div class="small-2 large-1 columns">
-										<span class="postfix inline"><i class="foundicon-key icon-large"></i></span>
-									</div>
-
-								</div>
-
-								<div class="row collapse">
-									<div class="small-10 large-11 columns">
-										<input type="email" id="input-email" pattern="[^ @]*@[^ @]*" placeholder="email" />
-										<small></small>
-									</div>
-
-									<div class="small-2 large-1 columns">
-										<span class="postfix inline"><i class="icon-envelope-alt"></i></span>
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="small-7 small-offset-3 columns">
-										<input type="button" id="reservation-submit" value="Reserve your handle!" />
-									</div>
-								</div>
-
-							</form>
-
-							<div id="award-notice">
-								<img src="/media/img/award.png" />
-								Earn the alpha badge when you reserve your handle
 							</div>
 						</div>
-						
 
-					</div>
+						<div class="face back">
+							<div id="form-success">
+								<div id="success-username">
+									<span id="success-tag">VGT</span>
+									<span id="success-handle">Scala</span>
+								</div>
 
-		<!-- 			<div class="face back">
-						<div id="form-success">
-							<div id="success-username">
-								<span id="success-tag">VGT</span>
-								<span id="success-handle">Scala</span>
+								<p>Great.  We'll save that handle just for you.</p>
+
+								<p id="success-award">
+									<img src="/media/img/award.png" />
+									Expect an email soon to claim your alpha badge.
+								</p>
 							</div>
-
-							<p>Great.  We'll save that handle just for you.</p>
-
-							<p id="success-award">
-								<img src="/media/img/award.png" />
-								Expect an email soon to claim your alpha badge.
-							</p>
 						</div>
-					</div>
-		 -->
 
+					</div>
 				</div>
 			</div>
 
@@ -108,7 +108,7 @@
 
 <!-- Three-up Content Blocks -->
 
-<div class="row escher">
+<div class="row">
 	<div class="large-4 columns">
 		<img src="/media/img/brackets.png" />
 
@@ -133,7 +133,7 @@
 </div>
 
 <!-- Call to Action Panel -->
-<div class="row escher">
+<div class="row">
 	<div class="large-12 columns">
 		<div class="panel">
 			<h4>Get in touch!</h4>
