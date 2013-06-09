@@ -155,10 +155,10 @@
 
 					<div class="face back">
 						<p id="feedback-thanks">
-							Thanks for letting us know!
+							Thanks, we appreciate it!
+							<img src="/media/img/logo_trophy.png" />
 						</p>
 					</div>
-
 				</div>
 			</div>
 		</div>
