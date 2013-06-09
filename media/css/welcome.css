@@ -374,7 +374,7 @@ h1 {
 	
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
-	padding: 5px 10px;
+	padding: 5px 20px;
 
 	background: #dd0408; /* Old browsers */
 	background: -moz-radial-gradient(center, ellipse cover,  #dd0408 0%, #b20000 100%); /* FF3.6+ */
