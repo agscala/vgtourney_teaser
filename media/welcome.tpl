@@ -1,16 +1,13 @@
 <div class="header-gradient">
-	<div class="row">
-		<div class="small-4 columns">
-			<img id="logo-top" src="/media/img/logo_light.png" />
-		</div>
-	</div>
-
 	<div class="row header-section">
 		<div>
 
-			<div class="large-6 columns">
+			<div id="hero-left" class="large-6 columns">
+				<img id="logo-top" src="/media/img/logo_light.png" />
 				<div>
-					<div id="top-section-header">A revolution in competitive gaming.</div>
+					<div id="top-section-header">
+						 A revolution in competitive gaming.
+					</div>
 				</div>
 
 				<div id="hero-sell">
@@ -108,7 +105,7 @@
 
 <!-- Three-up Content Blocks -->
 
-<div class="row">
+<div id="features-row" class="row">
 	<div class="large-4 columns info">
 		<h3>Comprehensive History</h3>
 		<img src="/media/img/brackets.png" />
