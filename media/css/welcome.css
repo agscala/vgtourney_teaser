@@ -42,7 +42,7 @@ body {
 }
 
 .header-gradient {
-	padding-top: 50px;
+	padding: 60px 0 20px 0;
 
 	background: #dd0408; /* Old browsers */
 	background: -moz-radial-gradient(center, ellipse cover,  #dd0408 0%, #7c0002 100%); /* FF3.6+ */
@@ -55,7 +55,6 @@ body {
 }
 
 .header-section {
-	height: 380px;
 }
 
 #hero-left {
