@@ -6,6 +6,7 @@
 <head>
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Alef' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="/media/img/ico.png">
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
