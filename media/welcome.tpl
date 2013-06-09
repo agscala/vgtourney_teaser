@@ -173,7 +173,7 @@
 
 		<div class="row">
 			<div class="large-6 columns">
-				<p>&copy; 2013 VGTourney</p>
+				<p>VGTourney &copy; 2013</p>
 			</div>
 
 			<div id="footer-love" class="large-6 columns">
