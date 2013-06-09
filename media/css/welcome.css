@@ -214,10 +214,17 @@ h1 {
 	margin-bottom: 5px;
 }
 
+#feedback-thanks-wrapper {
+	margin-top: -45px;
+}
+
 #feedback-thanks {
-	font-size: 1.9em;
-	margin-bottom: 40%;
+	font-size: 24px;
+	margin-bottom: 20px;
 	text-align: center;
+	color: white;
+	font-style: italic;
+	clear: both;
 }
 
 #feedback-thanks img {
