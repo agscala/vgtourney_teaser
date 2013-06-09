@@ -149,7 +149,7 @@
 						<form id="feedback-form" action="/feedback" method="POST">
 							<div><input type="email" id="feedback-email" placeholder="Your email (optional)" /></div>
 							<div><textarea id="feedback-message">What's on your mind?</textarea></div>
-							<input type="button" id="feedback-submit" value="Submit" disabled />
+							<input type="button" id="feedback-submit" value="Send Feedback" disabled />
 						</form>
 					</div>
 
