@@ -149,31 +149,33 @@
 	</div>
 	<div id="feedback-card-wrapper" class="large-4 columns info  flip">
 		<div id="feedback-card-wrapper">
-			<div id="feedback-card" class="card">
+			<div id="feedback-card-background">
+				<div id="feedback-card" class="card">
 
-				<div class="face front">
-					<select id="feedback-topic" class="customDropdown">
-						<option value="" disabled selected>Leave Us Feedback</option>
-						<option value="Organizer feature suggestion">Feature idea for tournament organizers</option>
-						<option value="Player feature suggestion">Feature idea for players</option>
-						<option value="Problem with page">Problem with this page</option>
-						<option value="Kudos">Give us kudos</option>
-						<option value="Other">Something else?</option>
-					</select>
+					<div class="face front">
+						<select id="feedback-topic" class="customDropdown">
+							<option value="" disabled selected>Leave Us Feedback</option>
+							<option value="Organizer feature suggestion">Feature idea for tournament organizers</option>
+							<option value="Player feature suggestion">Feature idea for players</option>
+							<option value="Problem with page">Problem with this page</option>
+							<option value="Kudos">Give us kudos</option>
+							<option value="Other">Something else?</option>
+						</select>
 
-					<form id="feedback-form" action="/feedback" method="POST">
-						<div><input type="email" id="feedback-email" placeholder="Your email (optional)" /></div>
-						<div><textarea id="feedback-message">What's on your mind?</textarea></div>
-						<input type="button" id="feedback-submit" value="Submit" disabled />
-					</form>
+						<form id="feedback-form" action="/feedback" method="POST">
+							<div><input type="email" id="feedback-email" placeholder="Your email (optional)" /></div>
+							<div><textarea id="feedback-message">What's on your mind?</textarea></div>
+							<input type="button" id="feedback-submit" value="Submit" disabled />
+						</form>
+					</div>
+
+					<div class="face back">
+						<p id="feedback-thanks">
+							Thanks for letting us know!
+						</p>
+					</div>
+
 				</div>
-
-				<div class="face back">
-					<p id="feedback-thanks">
-						Thanks for letting us know!
-					</p>
-				</div>
-
 			</div>
 		</div>
 	</div>
